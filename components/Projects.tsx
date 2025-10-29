@@ -316,7 +316,7 @@ export default function Projects() {
           className="text-center"
         >
           <p className="text-zinc-400 mb-6 text-lg">
-            Interested in collaborating on a project?
+            Want to see more projects?
           </p>
           <motion.a
             href="https://github.com/CwPranay"
@@ -328,7 +328,7 @@ export default function Projects() {
             className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-zinc-700 rounded-lg font-semibold hover:border-zinc-600 hover:bg-zinc-900/50 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-500 ease-out backdrop-blur-sm"
           >
             <FaGithub className="text-xl" />
-            <span>Explore More on GitHub</span>
+            <span>Visit My GitHub</span>
           </motion.a>
         </motion.div>
       </div>
