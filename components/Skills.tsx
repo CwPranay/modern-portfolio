@@ -16,8 +16,8 @@ import {
 	SiPython,
 	SiPandas,
 	SiNumpy,
-	SiOpenjdk,
 } from 'react-icons/si';
+import { FaJava } from 'react-icons/fa';
 
 export default function Skills() {
 	const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
@@ -46,7 +46,7 @@ export default function Skills() {
 			category: 'Frontend',
 		},
 		{ name: 'MySQL', icon: SiMysql, color: '#4479A1', category: 'Database' },
-		{ name: 'Java', icon: SiOpenjdk, color: '#007396', category: 'Language' },
+		{ name: 'Java', icon: FaJava, color: '#007396', category: 'Language' },
 		{ name: '.NET', icon: SiDotnet, color: '#512BD4', category: 'Backend' },
 		{ name: 'Git', icon: SiGit, color: '#F05032', category: 'Tools' },
 		{ name: 'Python', icon: SiPython, color: '#3776AB', category: 'Language' },
