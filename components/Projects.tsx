@@ -58,8 +58,8 @@ export default function Projects() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
           className="mb-20 text-center"
         >
           <p className="text-sm font-semibold text-zinc-400 mb-4 tracking-[0.2em] uppercase">
@@ -81,17 +81,17 @@ export default function Projects() {
           {projects.filter(p => p.featured).map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, delay: index * 0.2, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`grid lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}
             >
               {/* Image Side */}
               <motion.div
-                className={`relative group ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
+                className={`relative group ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}
               >
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -112,46 +112,21 @@ export default function Projects() {
               {/* Content Side */}
               <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                 <div>
-                  <motion.div
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                  >
-                    <span className="inline-block px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-xs font-semibold mb-4">
-                      Featured Project
-                    </span>
-                  </motion.div>
+                  <span className="inline-block px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-xs font-semibold mb-4">
+                    Featured Project
+                  </span>
 
-                  <motion.h3
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className="text-3xl md:text-4xl font-bold text-white mb-4"
-                  >
+                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
                     {project.title}
-                  </motion.h3>
+                  </h3>
 
-                  <motion.p
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.5 }}
-                    className="text-zinc-400 leading-relaxed text-base md:text-lg"
-                  >
+                  <p className="text-zinc-400 leading-relaxed text-base md:text-lg">
                     {project.description}
-                  </motion.p>
+                  </p>
                 </div>
 
                 {/* Tech Stack */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                  className="flex flex-wrap gap-2"
-                >
+                <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
@@ -160,16 +135,10 @@ export default function Projects() {
                       {tech}
                     </span>
                   ))}
-                </motion.div>
+                </div>
 
                 {/* Action Buttons */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.7 }}
-                  className="flex gap-4"
-                >
+                <div className="flex gap-4">
                   <motion.a
                     href={project.liveUrl}
                     target="_blank"
@@ -202,7 +171,7 @@ export default function Projects() {
                       <span>Private Repo</span>
                     </div>
                   )}
-                </motion.div>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -212,8 +181,8 @@ export default function Projects() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
           className="mb-12"
         >
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">
@@ -225,10 +194,10 @@ export default function Projects() {
           {projects.filter(p => !p.featured).map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
               whileHover={{ y: -8 }}
               className="group relative"
             >
@@ -311,8 +280,8 @@ export default function Projects() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5 }}
           className="text-center"
         >
           <p className="text-zinc-400 mb-6 text-lg">

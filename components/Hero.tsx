@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaArrowDown } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { useRef, useEffect } from 'react';
 
@@ -222,25 +222,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator - Appears last */}
-      <motion.div
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.6,
-          delay: 1.7,
-          ease: "easeOut"
-        }}
-      >
-        <span className="text-xs text-zinc-500 uppercase tracking-wider">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <FaArrowDown className="text-zinc-600" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }
