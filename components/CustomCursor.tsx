@@ -7,6 +7,7 @@ export default function CustomCursor() {
     const [isHovering, setIsHovering] = useState(false);
     const [cursorVariant, setCursorVariant] = useState('default');
     const [ripples, setRipples] = useState<{ id: number; x: number; y: number }[]>([]);
+    const [isDesktop, setIsDesktop] = useState(false);
 
     const cursorX = useMotionValue(-100);
     const cursorY = useMotionValue(-100);
@@ -14,6 +15,13 @@ export default function CustomCursor() {
     const springConfig = { damping: 25, stiffness: 200 };
     const cursorXSpring = useSpring(cursorX, springConfig);
     const cursorYSpring = useSpring(cursorY, springConfig);
+
+    useEffect(() => {
+        // Check if device has a mouse (desktop)
+        const hasPointer = window.matchMedia('(pointer: fine)').matches;
+        const isLargeScreen = window.innerWidth >= 1024;
+        setIsDesktop(hasPointer && isLargeScreen);
+    }, []);
 
     useEffect(() => {
         const moveCursor = (e: MouseEvent) => {
@@ -126,6 +134,11 @@ export default function CustomCursor() {
     }, []);
 
     const colors = getColors();
+
+    // Don't render cursor on mobile/tablet
+    if (!isDesktop) {
+        return null;
+    }
 
     return (
         <>
