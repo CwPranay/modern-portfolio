@@ -21,15 +21,20 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-black/80 backdrop-blur-xl border-b border-zinc-900' : 'bg-transparent'
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-xl border-b border-zinc-900' : 'bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-xl font-bold">
-            <span className="text-white">Pranay</span>
-            <span className="text-blue-400">Gurav</span>
+          <Link href="/" className="relative flex items-center gap-1.5">
+            {/* Logo with minimal glow effect */}
+            
+
+            {/* Name text */}
+            <span className="text-xl sm:text-xl md:text-xl font-bold tracking-tight">
+              <span className="text-white">&lt;Pranay</span>
+              <span className="text-blue-400">Gurav/&gt;</span>
+            </span>
           </Link>
 
           {/* Desktop Nav */}
