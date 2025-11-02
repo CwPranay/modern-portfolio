@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
 	SiReact,
 	SiNextdotjs,
@@ -18,20 +18,11 @@ import {
 	SiNumpy,
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
+import { section } from 'framer-motion/client';
+
 
 export default function Skills() {
 	const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
-	const [isLight, setIsLight] = useState(false);
-
-	useEffect(() => {
-		const checkTheme = () => {
-			setIsLight(document.documentElement.classList.contains('light'));
-		};
-		checkTheme();
-		const observer = new MutationObserver(checkTheme);
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-		return () => observer.disconnect();
-	}, []);
 
 	const skills = [
 		{ name: 'React', icon: SiReact, color: '#61DAFB', category: 'Frontend' },
@@ -108,20 +99,17 @@ export default function Skills() {
 							onHoverEnd={() => setHoveredSkill(null)}
 							className="relative group cursor-pointer"
 						>
-							<div className="relative aspect-square rounded-2xl p-6 flex flex-col items-center justify-center gap-3 transition-all hover:scale-105" style={{
+							<div className="relative aspect-square rounded-2xl p-6 flex flex-col items-center justify-center gap-3 transition-transform hover:scale-105" style={{
 								borderWidth: '1px',
 								borderColor: 'var(--border-color)',
 								backgroundColor: 'var(--card-bg)',
-								boxShadow: isLight
-									? '0 2px 8px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06)'
-									: 'none'
+								boxShadow: 'var(--card-shadow)'
 							}}>
 								<skill.icon
 									className="text-3xl transition-colors"
 									style={{
-										color: hoveredSkill === skill.name 
-											? (skill.color === '#FFFFFF' && isLight ? '#000000' : skill.color)
-											: 'var(--text-secondary)',
+										color: hoveredSkill === skill.name ? skill.color : 'var(--text-secondary)',
+										filter: hoveredSkill === skill.name && skill.color === '#FFFFFF' ? 'invert(var(--icon-invert, 0))' : 'none'
 									}}
 								/>
 								<span className="text-xs transition-colors text-center font-medium" style={{ color: 'var(--text-secondary)' }}>

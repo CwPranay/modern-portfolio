@@ -22,7 +22,7 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed w-full z-50 transition-all duration-300 backdrop-blur-xl ${scrolled ? 'border-b' : ''}`}
+      className={`fixed w-full z-50 transition-[background-color,border-color] duration-300 backdrop-blur-xl ${scrolled ? 'border-b' : ''}`}
       style={{
         backgroundColor: scrolled ? 'var(--navbar-bg)' : 'transparent',
         borderColor: scrolled ? 'var(--border-color)' : 'transparent'
@@ -51,7 +51,7 @@ export default function Navbar() {
                 style={{ color: 'var(--text-secondary)' }}
               >
                 {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-[width] duration-300" />
               </a>
             ))}
             <ThemeToggle />

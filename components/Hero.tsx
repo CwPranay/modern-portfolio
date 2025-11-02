@@ -185,7 +185,7 @@ export default function Hero() {
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="group relative w-full sm:w-auto px-8 py-3.5 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-500 ease-out"
+              className="group relative w-full sm:w-auto px-8 py-3.5 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-[transform,box-shadow] duration-500 ease-out"
               style={{
                 backgroundColor: 'var(--button-primary-bg)',
                 color: 'var(--button-primary-text)'
@@ -200,7 +200,7 @@ export default function Hero() {
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="group relative w-full sm:w-auto px-8 py-3.5 border-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-500 ease-out backdrop-blur-sm"
+              className="group relative w-full sm:w-auto px-8 py-3.5 border-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/20 transition-[transform,border-color,box-shadow] duration-500 ease-out backdrop-blur-sm"
               style={{
                 borderColor: 'var(--border-color)',
                 color: 'var(--foreground)'

@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import CustomCursor from "@/components/CustomCursor";
-import { ThemeProvider } from "@/contexts/ThemeContext";
+import ThemeScript from "@/components/ThemeScript";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,12 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <ThemeScript />
+      </head>
       <body className={inter.className}>
-        <ThemeProvider>
-          <CustomCursor />
-          <Navbar />
-          {children}
-        </ThemeProvider>
+        <CustomCursor />
+        <Navbar />
+        {children}
       </body>
     </html>
   );

@@ -11,18 +11,8 @@
   --button-primary-text: #000000;
   --grid-color: #18181b;
   --navbar-bg: rgba(0, 0, 0, 0.8);
-}
-
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  transition: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  body {
-    transition: background-color 0.15s ease, color 0.15s ease;
-  }
+  --card-shadow: none;
+  --cursor-color: #ffffff;
 }
 
 .light {
@@ -36,29 +26,37 @@ body {
   --button-primary-text: #ffffff;
   --grid-color: #e4e4e7;
   --navbar-bg: rgba(255, 255, 255, 0.8);
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
+  --icon-invert: 1;
+  --cursor-color: #000000;
 }
 
-.light body {
-  background-color: #ffffff;
-  color: #000000;
+/* NO transitions on theme change - instant switch for performance */
+html {
+  transition: none;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Only animate the toggle button itself */
+.theme-toggle-button {
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
+
+.theme-toggle-slider {
+  transition: left 0.2s ease, background-color 0.2s ease;
+}
+
+/* Disable transition-all on large containers - use specific properties */
+/* This prevents lag during theme changes */
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbar - Dark */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }

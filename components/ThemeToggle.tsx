@@ -2,43 +2,37 @@
 
 import { useState, useEffect } from 'react';
 import { HiSun, HiMoon } from 'react-icons/hi';
+import { toggleTheme, getCurrentTheme, type Theme } from '@/lib/theme';
 
+/**
+ * Optimized theme toggle - no re-renders, instant switching
+ * Only this button re-renders, not the entire app
+ */
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  const [theme, setTheme] = useState<Theme>('dark');
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as 'dark' | 'light';
-    if (savedTheme) {
-      setTheme(savedTheme);
-      if (savedTheme === 'light') {
-        document.documentElement.classList.add('light');
-        document.body.classList.add('light');
-      }
-    }
+    // Get initial theme from DOM (already set by ThemeScript)
+    setTheme(getCurrentTheme());
+
+    // Listen for theme changes from other sources
+    const handleThemeChange = (e: CustomEvent<{ theme: Theme }>) => {
+      setTheme(e.detail.theme);
+    };
+
+    window.addEventListener('themechange', handleThemeChange as EventListener);
+    return () => window.removeEventListener('themechange', handleThemeChange as EventListener);
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    
-    // Use requestAnimationFrame for smoother transition
-    requestAnimationFrame(() => {
-      setTheme(newTheme);
-      localStorage.setItem('theme', newTheme);
-      
-      if (newTheme === 'light') {
-        document.documentElement.classList.add('light');
-        document.body.classList.add('light');
-      } else {
-        document.documentElement.classList.remove('light');
-        document.body.classList.remove('light');
-      }
-    });
+  const handleToggle = () => {
+    const newTheme = toggleTheme(true); // smooth = true for button animation only
+    setTheme(newTheme);
   };
 
   return (
     <button
-      onClick={toggleTheme}
-      className="relative w-16 h-8 rounded-full transition-all duration-200 hover:scale-105"
+      onClick={handleToggle}
+      className="relative w-16 h-8 rounded-full theme-toggle-button hover:scale-105"
       style={{
         backgroundColor: theme === 'dark' ? '#1e293b' : '#e2e8f0',
       }}
@@ -46,7 +40,7 @@ export default function ThemeToggle() {
     >
       {/* Sliding circle */}
       <div
-        className="absolute top-1 w-6 h-6 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center"
+        className="absolute top-1 w-6 h-6 rounded-full shadow-lg theme-toggle-slider flex items-center justify-center"
         style={{
           left: theme === 'dark' ? '4px' : 'calc(100% - 28px)',
           backgroundColor: theme === 'dark' ? '#0f172a' : '#ffffff',
@@ -60,7 +54,7 @@ export default function ThemeToggle() {
       </div>
       
       {/* Background icons */}
-      <div className="absolute inset-0 flex items-center justify-between px-2">
+      <div className="absolute inset-0 flex items-center justify-between px-2 pointer-events-none">
         <HiMoon 
           className="w-3.5 h-3.5 transition-opacity duration-200"
           style={{ 

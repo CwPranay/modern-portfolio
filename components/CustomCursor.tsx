@@ -7,7 +7,7 @@ export default function CustomCursor() {
     const [isHovering, setIsHovering] = useState(false);
     const [cursorVariant, setCursorVariant] = useState('default');
     const [ripples, setRipples] = useState<{ id: number; x: number; y: number }[]>([]);
-    const [isDesktop, setIsDesktop] = useState(false);
+    const [isLight, setIsLight] = useState(false);
 
     const cursorX = useMotionValue(-100);
     const cursorY = useMotionValue(-100);
@@ -17,13 +17,15 @@ export default function CustomCursor() {
     const cursorYSpring = useSpring(cursorY, springConfig);
 
     useEffect(() => {
-        // Check if device has a mouse (desktop)
-        const hasPointer = window.matchMedia('(pointer: fine)').matches;
-        const isLargeScreen = window.innerWidth >= 1024;
-        setIsDesktop(hasPointer && isLargeScreen);
-    }, []);
+        // Check initial theme
+        setIsLight(document.documentElement.classList.contains('light'));
+        
+        // Listen for theme changes via custom event (no MutationObserver needed)
+        const handleThemeChange = () => {
+            setIsLight(document.documentElement.classList.contains('light'));
+        };
+        window.addEventListener('themechange', handleThemeChange);
 
-    useEffect(() => {
         const moveCursor = (e: MouseEvent) => {
             cursorX.set(e.clientX);
             cursorY.set(e.clientY);
@@ -37,7 +39,6 @@ export default function CustomCursor() {
             };
             setRipples(prev => [...prev, ripple]);
 
-            // Remove ripple after animation
             setTimeout(() => {
                 setRipples(prev => prev.filter(r => r.id !== ripple.id));
             }, 600);
@@ -46,7 +47,6 @@ export default function CustomCursor() {
         const handleMouseEnter = (e: Event) => {
             const target = e.target as HTMLElement;
 
-            // Check for different element types
             if (target.tagName === 'A' || target.tagName === 'BUTTON') {
                 setIsHovering(true);
                 setCursorVariant('link');
@@ -70,7 +70,6 @@ export default function CustomCursor() {
         window.addEventListener('mousemove', moveCursor);
         window.addEventListener('click', handleClick);
 
-        // Add listeners to all interactive elements
         const interactiveElements = document.querySelectorAll('a, button, input, textarea, .group');
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', handleMouseEnter);
@@ -78,6 +77,7 @@ export default function CustomCursor() {
         });
 
         return () => {
+            window.removeEventListener('themechange', handleThemeChange);
             window.removeEventListener('mousemove', moveCursor);
             window.removeEventListener('click', handleClick);
             interactiveElements.forEach(el => {
@@ -88,66 +88,23 @@ export default function CustomCursor() {
     }, [cursorX, cursorY]);
 
     // Get colors based on variant and theme
-    const getColors = () => {
-        const isLight = document.documentElement.classList.contains('light');
-        
-        switch (cursorVariant) {
-            case 'link':
-                return {
-                    dot: 'bg-blue-400',
-                    ring: 'border-blue-400',
-                    glow: 'bg-blue-400/30'
-                };
-            case 'project':
-                return {
-                    dot: 'bg-cyan-400',
-                    ring: 'border-cyan-400',
-                    glow: 'bg-cyan-400/30'
-                };
-            case 'input':
-                return {
-                    dot: 'bg-green-400',
-                    ring: 'border-green-400',
-                    glow: 'bg-green-400/30'
-                };
-            default:
-                return {
-                    dot: isLight ? 'bg-black' : 'bg-white',
-                    ring: isLight ? 'border-black' : 'border-white',
-                    glow: isLight ? 'bg-black/20' : 'bg-white/20'
-                };
-        }
+    const getCursorColor = () => {
+        if (cursorVariant === 'link') return { dot: '#60a5fa', ring: '#60a5fa' };
+        if (cursorVariant === 'project') return { dot: '#22d3ee', ring: '#22d3ee' };
+        if (cursorVariant === 'input') return { dot: '#4ade80', ring: '#4ade80' };
+        return { dot: isLight ? '#000000' : '#ffffff', ring: isLight ? '#000000' : '#ffffff' };
     };
 
-    const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-    
-    useEffect(() => {
-        const checkTheme = () => {
-            setTheme(document.documentElement.classList.contains('light') ? 'light' : 'dark');
-        };
-        
-        checkTheme();
-        const observer = new MutationObserver(checkTheme);
-        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-        
-        return () => observer.disconnect();
-    }, []);
-
-    const colors = getColors();
-
-    // Don't render cursor on mobile/tablet
-    if (!isDesktop) {
-        return null;
-    }
+    const cursorColor = getCursorColor();
 
     return (
         <>
             {/* Hide default cursor */}
             <style jsx global>{`
-        * {
-          cursor: none !important;
-        }
-      `}</style>
+                * {
+                    cursor: none !important;
+                }
+            `}</style>
 
             {/* Outer Ring */}
             <motion.div
@@ -167,8 +124,9 @@ export default function CustomCursor() {
                         opacity: isHovering ? 0 : 1,
                     }}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                    className={`rounded-full border ${colors.ring}`}
+                    className="rounded-full border"
                     style={{
+                        borderColor: cursorColor.ring,
                         boxShadow: '0 0 0 1px rgba(0,0,0,0.1)'
                     }}
                 />
@@ -176,12 +134,13 @@ export default function CustomCursor() {
 
             {/* Inner Dot */}
             <motion.div
-                className={`fixed top-0 left-0 pointer-events-none z-[9999] rounded-full ${colors.dot}`}
+                className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full"
                 style={{
                     x: cursorX,
                     y: cursorY,
                     translateX: '-50%',
                     translateY: '-50%',
+                    backgroundColor: cursorColor.dot,
                     boxShadow: '0 0 0 1px rgba(0,0,0,0.1)'
                 }}
                 animate={{
@@ -193,17 +152,18 @@ export default function CustomCursor() {
 
             {/* Glow Effect */}
             <motion.div
-                className={`fixed top-0 left-0 pointer-events-none z-[9998] rounded-full blur-xl ${colors.glow}`}
+                className="fixed top-0 left-0 pointer-events-none z-[9998] rounded-full blur-xl"
                 style={{
                     x: cursorXSpring,
                     y: cursorYSpring,
                     translateX: '-50%',
                     translateY: '-50%',
+                    backgroundColor: cursorColor.dot,
+                    opacity: isHovering ? 0.3 : 0,
                 }}
                 animate={{
                     width: isHovering ? 100 : 0,
                     height: isHovering ? 100 : 0,
-                    opacity: isHovering ? 0.6 : 0,
                 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 20 }}
             />
@@ -213,12 +173,13 @@ export default function CustomCursor() {
                 {ripples.map((ripple) => (
                     <motion.div
                         key={ripple.id}
-                        className={`fixed top-0 left-0 pointer-events-none z-[9997] rounded-full border-2 ${colors.ring}`}
+                        className="fixed top-0 left-0 pointer-events-none z-[9997] rounded-full border-2"
                         style={{
                             left: ripple.x,
                             top: ripple.y,
                             translateX: '-50%',
                             translateY: '-50%',
+                            borderColor: cursorColor.ring,
                             boxShadow: '0 0 0 1px rgba(0,0,0,0.1)'
                         }}
                         initial={{ width: 0, height: 0, opacity: 1 }}

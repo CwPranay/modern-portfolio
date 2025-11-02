@@ -94,7 +94,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Card */}
-              <div className="relative rounded-2xl p-6 transition-all duration-300 backdrop-blur-sm" style={{
+              <div className="relative rounded-2xl p-6 transition-[border-color,box-shadow] duration-300 backdrop-blur-sm" style={{
                 borderWidth: '1px',
                 borderColor: 'var(--border-color)',
                 backgroundColor: 'var(--badge-bg)'
@@ -128,7 +128,7 @@ export default function About() {
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="w-full sm:w-auto px-8 py-3.5 border-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-500 ease-out backdrop-blur-sm"
+              className="w-full sm:w-auto px-8 py-3.5 border-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/20 transition-[transform,border-color,box-shadow] duration-500 ease-out backdrop-blur-sm"
               style={{
                 borderColor: 'var(--border-color)',
                 color: 'var(--foreground)'

@@ -97,13 +97,11 @@ export default function Experience() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Card */}
-              <div className="relative rounded-2xl p-6 md:p-8 transition-all duration-300 backdrop-blur-sm" style={{
+              <div className="relative rounded-2xl p-6 md:p-8 transition-[border-color,box-shadow] duration-300 backdrop-blur-sm" style={{
                 borderWidth: '1px',
                 borderColor: 'var(--border-color)',
                 backgroundColor: 'var(--card-bg)',
-                boxShadow: document.documentElement.classList.contains('light')
-                  ? '0 2px 8px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06)'
-                  : 'none'
+                boxShadow: 'var(--card-shadow)'
               }}>
                 <div className="flex items-start gap-4 mb-4">
                   {/* Icon */}
@@ -171,9 +169,7 @@ export default function Experience() {
             backgroundColor: 'var(--card-bg)',
             borderWidth: '1px',
             borderColor: 'var(--border-color)',
-            boxShadow: document.documentElement.classList.contains('light')
-              ? '0 2px 8px rgba(0,0,0,0.08)'
-              : 'none'
+            boxShadow: 'var(--card-shadow)'
           }}>
             <p style={{ color: 'var(--text-secondary)' }}>
               <span className="font-semibold" style={{ color: 'var(--foreground)' }}>BSc IT Student</span> • 2023 - 2026 • Final Year, Last Semester

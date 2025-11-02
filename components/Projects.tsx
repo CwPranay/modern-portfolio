@@ -100,7 +100,7 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Image container */}
-                <div className="relative aspect-video rounded-2xl overflow-hidden border border-zinc-800 group-hover:border-zinc-700 transition-all duration-300 bg-zinc-900">
+                <div className="relative aspect-video rounded-2xl overflow-hidden border border-zinc-800 group-hover:border-zinc-700 transition-[border-color] duration-300 bg-zinc-900">
                   <Image
                     src={project.image}
                     alt={project.title}
@@ -173,7 +173,7 @@ export default function Projects() {
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                       transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                      className="flex items-center gap-2 px-6 py-3 border-2 rounded-lg font-semibold transition-all"
+                      className="flex items-center gap-2 px-6 py-3 border-2 rounded-lg font-semibold transition-[transform,border-color,background-color]"
                       style={{
                         borderColor: 'var(--border-color)',
                         color: 'var(--foreground)'
@@ -226,7 +226,7 @@ export default function Projects() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Card */}
-              <div className="relative rounded-2xl overflow-hidden transition-all duration-300 backdrop-blur-sm" style={{
+              <div className="relative rounded-2xl overflow-hidden transition-[border-color,box-shadow] duration-300 backdrop-blur-sm" style={{
                 borderWidth: '1px',
                 borderColor: 'var(--border-color)',
                 backgroundColor: 'var(--badge-bg)'
@@ -298,7 +298,7 @@ export default function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05 }}
-                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border-2 rounded-lg font-medium text-sm transition-all"
+                        className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border-2 rounded-lg font-medium text-sm transition-[transform,border-color,background-color]"
                         style={{
                           borderColor: 'var(--border-color)',
                           color: 'var(--foreground)'
@@ -333,7 +333,7 @@ export default function Projects() {
             whileHover={{ scale: 1.02, y: -2 }}
             whileTap={{ scale: 0.98 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            className="inline-flex items-center gap-2 px-8 py-3.5 border-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-500 ease-out backdrop-blur-sm"
+            className="inline-flex items-center gap-2 px-8 py-3.5 border-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/20 transition-[transform,border-color,box-shadow] duration-500 ease-out backdrop-blur-sm"
             style={{
               borderColor: 'var(--border-color)',
               color: 'var(--foreground)'
