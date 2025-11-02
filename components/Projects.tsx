@@ -48,7 +48,7 @@ export default function Projects() {
     <section id="projects" className="py-32 px-4 sm:px-6 relative overflow-hidden">
       {/* Animated grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#18181b_1px,transparent_1px),linear-gradient(to_bottom,#18181b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30" />
-      
+
       {/* Multiple glows for depth */}
       <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px]" />
       <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[120px]" />
@@ -95,7 +95,7 @@ export default function Projects() {
               >
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 {/* Image container */}
                 <div className="relative aspect-video rounded-2xl overflow-hidden border border-zinc-800 group-hover:border-zinc-700 transition-all duration-300 bg-zinc-900">
                   <Image
@@ -122,7 +122,7 @@ export default function Projects() {
                       Featured Project
                     </span>
                   </motion.div>
-                  
+
                   <motion.h3
                     initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -132,7 +132,7 @@ export default function Projects() {
                   >
                     {project.title}
                   </motion.h3>
-                  
+
                   <motion.p
                     initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -182,7 +182,7 @@ export default function Projects() {
                     <FaExternalLinkAlt />
                     <span>Live Demo</span>
                   </motion.a>
-                  
+
                   {project.codeUrl ? (
                     <motion.a
                       href={project.codeUrl}
@@ -234,7 +234,7 @@ export default function Projects() {
             >
               {/* Hover glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
+
               {/* Card */}
               <div className="relative border border-zinc-900 rounded-2xl overflow-hidden hover:border-zinc-700 transition-all duration-300 bg-black/50 backdrop-blur-sm">
                 {/* Image */}
@@ -253,7 +253,7 @@ export default function Projects() {
                   <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">
                     {project.title}
                   </h3>
-                  
+
                   <p className="text-zinc-400 text-sm mb-4 leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
@@ -287,7 +287,7 @@ export default function Projects() {
                       <FaExternalLinkAlt className="text-xs" />
                       <span>Demo</span>
                     </motion.a>
-                    
+
                     {project.codeUrl && (
                       <motion.a
                         href={project.codeUrl}
