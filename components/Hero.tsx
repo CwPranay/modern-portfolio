@@ -37,11 +37,15 @@ export default function Hero() {
   const spotlightOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
       {/* Animated grid with scroll */}
       <motion.div
-        className="absolute inset-0 bg-[linear-gradient(to_right,#18181b_1px,transparent_1px),linear-gradient(to_bottom,#18181b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_110%)]"
-        style={{ opacity: gridOpacity }}
+        className="absolute inset-0 [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_110%)]"
+        style={{ 
+          opacity: gridOpacity,
+          backgroundImage: 'linear-gradient(to right, var(--grid-color) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px)',
+          backgroundSize: '4rem 4rem'
+        }}
       />
 
       {/* Animated spotlight with scroll */}
@@ -76,18 +80,24 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900/50 border border-zinc-800 rounded-full mb-8 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 backdrop-blur-sm"
+            style={{ 
+              backgroundColor: 'var(--badge-bg)',
+              borderWidth: '1px',
+              borderColor: 'var(--border-color)'
+            }}
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
             </span>
-            <span className="text-sm text-zinc-400">Available for new projects</span>
+            <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Available for new projects</span>
           </motion.div>
 
           {/* Title - Fades in first */}
           <motion.p
-            className="text-sm md:text-base font-semibold text-zinc-400 mb-6 tracking-[0.2em] uppercase"
+            className="text-sm md:text-base font-semibold mb-6 tracking-[0.2em] uppercase"
+            style={{ color: 'var(--text-secondary)' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -103,7 +113,8 @@ export default function Hero() {
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 tracking-tight leading-none">
             {/* "Building Digital" fades up second */}
             <motion.span
-              className="block text-white mb-2"
+              className="block mb-2"
+              style={{ color: 'var(--foreground)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -143,7 +154,8 @@ export default function Hero() {
 
           {/* Description - Fades in after heading */}
           <motion.p
-            className="text-sm sm:text-base md:text-lg text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed px-6 sm:px-4"
+            className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed px-6 sm:px-4"
+            style={{ color: 'var(--text-secondary)' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -152,7 +164,7 @@ export default function Hero() {
               ease: "easeOut"
             }}
           >
-            Full-stack developer specializing in <span className="text-white font-medium">MERN stack</span> technologies.
+            Full-stack developer specializing in <span className="font-medium" style={{ color: 'var(--foreground)' }}>MERN stack</span> technologies.
             Creating scalable, modern applications that deliver exceptional user experiences.
           </motion.p>
 
@@ -173,7 +185,11 @@ export default function Hero() {
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="group relative w-full sm:w-auto px-8 py-3.5 bg-white text-black rounded-lg font-semibold shadow-lg hover:shadow-xl transition-shadow duration-500 ease-out"
+              className="group relative w-full sm:w-auto px-8 py-3.5 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-500 ease-out"
+              style={{
+                backgroundColor: 'var(--button-primary-bg)',
+                color: 'var(--button-primary-text)'
+              }}
             >
               View My Work
             </motion.a>
@@ -184,7 +200,11 @@ export default function Hero() {
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="group relative w-full sm:w-auto px-8 py-3.5 border-2 border-zinc-700 rounded-lg font-semibold hover:border-zinc-600 hover:bg-zinc-900/50 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-500 ease-out backdrop-blur-sm"
+              className="group relative w-full sm:w-auto px-8 py-3.5 border-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-500 ease-out backdrop-blur-sm"
+              style={{
+                borderColor: 'var(--border-color)',
+                color: 'var(--foreground)'
+              }}
             >
               Get in Touch
             </motion.a>
@@ -212,7 +232,8 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ y: -4 }}
-                className="p-3 text-zinc-400 hover:text-white transition-colors"
+                className="p-3 transition-colors"
+                style={{ color: 'var(--text-secondary)' }}
                 aria-label={label}
               >
                 <Icon size={24} />

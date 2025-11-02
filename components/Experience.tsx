@@ -48,10 +48,13 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-32 px-4 sm:px-6 relative overflow-hidden">
+    <section id="experience" className="py-32 px-4 sm:px-6 relative overflow-hidden" style={{ backgroundColor: 'var(--background)' }}>
       {/* Grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#18181b_1px,transparent_1px),linear-gradient(to_bottom,#18181b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30" />
-      
+      <div className="absolute inset-0 opacity-30" style={{
+        backgroundImage: 'linear-gradient(to right, var(--grid-color) 1px, transparent 1px), linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px)',
+        backgroundSize: '4rem 4rem'
+      }} />
+
       {/* Subtle glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-[120px]" />
 
@@ -64,16 +67,16 @@ export default function Experience() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-16"
         >
-          <p className="text-sm font-semibold text-zinc-400 mb-4 tracking-[0.2em] uppercase">
+          <p className="text-sm font-semibold mb-4 tracking-[0.2em] uppercase" style={{ color: 'var(--text-secondary)' }}>
             Journey
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: 'var(--foreground)' }}>
             Experience &{' '}
             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Learning
             </span>
           </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl">
+          <p className="text-lg max-w-2xl" style={{ color: 'var(--text-secondary)' }}>
             My journey as a BSc IT student, building real projects and mastering modern web development.
           </p>
         </motion.div>
@@ -92,21 +95,28 @@ export default function Experience() {
             >
               {/* Hover glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
+
               {/* Card */}
-              <div className="relative border border-zinc-900 rounded-2xl p-6 md:p-8 hover:border-zinc-700 transition-all duration-300 bg-black/50 backdrop-blur-sm">
+              <div className="relative rounded-2xl p-6 md:p-8 transition-all duration-300 backdrop-blur-sm" style={{
+                borderWidth: '1px',
+                borderColor: 'var(--border-color)',
+                backgroundColor: 'var(--card-bg)',
+                boxShadow: document.documentElement.classList.contains('light')
+                  ? '0 2px 8px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06)'
+                  : 'none'
+              }}>
                 <div className="flex items-start gap-4 mb-4">
                   {/* Icon */}
                   <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-xl">
                     <exp.icon className="text-2xl text-blue-400" />
                   </div>
-                  
+
                   <div className="flex-1">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                      <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                      <h3 className="text-xl md:text-2xl font-bold group-hover:text-blue-400 transition-colors" style={{ color: 'var(--foreground)' }}>
                         {exp.role}
                       </h3>
-                      <span className="text-sm text-zinc-500 font-medium">
+                      <span className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
                         {exp.period}
                       </span>
                     </div>
@@ -114,7 +124,7 @@ export default function Experience() {
                   </div>
                 </div>
 
-                <p className="text-zinc-400 mb-4 leading-relaxed">
+                <p className="mb-4 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                   {exp.description}
                 </p>
 
@@ -136,11 +146,11 @@ export default function Experience() {
                 </ul>
 
                 {/* Tech Stack */}
-                <div className="pt-4 border-t border-zinc-900">
-                  <p className="text-xs text-zinc-500 mb-2 font-semibold uppercase tracking-wider">
+                <div className="pt-4 border-t" style={{ borderColor: 'var(--border-color)' }}>
+                  <p className="text-xs mb-2 font-semibold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>
                     Tech Stack
                   </p>
-                  <p className="text-sm text-zinc-400">
+                  <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                     {exp.stack}
                   </p>
                 </div>
@@ -157,9 +167,16 @@ export default function Experience() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-12 text-center"
         >
-          <div className="inline-block px-6 py-3 bg-zinc-900/50 border border-zinc-800 rounded-xl backdrop-blur-sm">
-            <p className="text-zinc-400">
-              <span className="text-white font-semibold">BSc IT Student</span> • 2023 - 2026 • Final Year, Last Semester
+          <div className="inline-block px-6 py-3 rounded-xl backdrop-blur-sm" style={{
+            backgroundColor: 'var(--card-bg)',
+            borderWidth: '1px',
+            borderColor: 'var(--border-color)',
+            boxShadow: document.documentElement.classList.contains('light')
+              ? '0 2px 8px rgba(0,0,0,0.08)'
+              : 'none'
+          }}>
+            <p style={{ color: 'var(--text-secondary)' }}>
+              <span className="font-semibold" style={{ color: 'var(--foreground)' }}>BSc IT Student</span> • 2023 - 2026 • Final Year, Last Semester
             </p>
           </div>
         </motion.div>

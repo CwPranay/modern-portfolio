@@ -79,8 +79,10 @@ export default function CustomCursor() {
         };
     }, [cursorX, cursorY]);
 
-    // Get colors based on variant
+    // Get colors based on variant and theme
     const getColors = () => {
+        const isLight = document.documentElement.classList.contains('light');
+        
         switch (cursorVariant) {
             case 'link':
                 return {
@@ -102,12 +104,26 @@ export default function CustomCursor() {
                 };
             default:
                 return {
-                    dot: 'bg-white',
-                    ring: 'border-white',
-                    glow: 'bg-white/20'
+                    dot: isLight ? 'bg-black' : 'bg-white',
+                    ring: isLight ? 'border-black' : 'border-white',
+                    glow: isLight ? 'bg-black/20' : 'bg-white/20'
                 };
         }
     };
+
+    const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+    
+    useEffect(() => {
+        const checkTheme = () => {
+            setTheme(document.documentElement.classList.contains('light') ? 'light' : 'dark');
+        };
+        
+        checkTheme();
+        const observer = new MutationObserver(checkTheme);
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+        
+        return () => observer.disconnect();
+    }, []);
 
     const colors = getColors();
 
@@ -122,7 +138,7 @@ export default function CustomCursor() {
 
             {/* Outer Ring */}
             <motion.div
-                className={`fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference ${colors.ring}`}
+                className="fixed top-0 left-0 pointer-events-none z-[9999]"
                 style={{
                     x: cursorXSpring,
                     y: cursorYSpring,
@@ -138,18 +154,22 @@ export default function CustomCursor() {
                         opacity: isHovering ? 0 : 1,
                     }}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                    className="rounded-full border"
+                    className={`rounded-full border ${colors.ring}`}
+                    style={{
+                        boxShadow: '0 0 0 1px rgba(0,0,0,0.1)'
+                    }}
                 />
             </motion.div>
 
             {/* Inner Dot */}
             <motion.div
-                className={`fixed top-0 left-0 pointer-events-none z-[9999] rounded-full ${colors.dot} mix-blend-difference`}
+                className={`fixed top-0 left-0 pointer-events-none z-[9999] rounded-full ${colors.dot}`}
                 style={{
                     x: cursorX,
                     y: cursorY,
                     translateX: '-50%',
                     translateY: '-50%',
+                    boxShadow: '0 0 0 1px rgba(0,0,0,0.1)'
                 }}
                 animate={{
                     width: isHovering ? 12 : 8,
@@ -186,6 +206,7 @@ export default function CustomCursor() {
                             top: ripple.y,
                             translateX: '-50%',
                             translateY: '-50%',
+                            boxShadow: '0 0 0 1px rgba(0,0,0,0.1)'
                         }}
                         initial={{ width: 0, height: 0, opacity: 1 }}
                         animate={{

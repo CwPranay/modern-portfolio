@@ -61,7 +61,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-32 px-6 relative">
+    <section id="contact" className="py-32 px-6 relative" style={{ backgroundColor: 'var(--background)' }}>
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,8 +70,8 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <p className="text-sm font-medium text-zinc-400 mb-4 tracking-wider uppercase">Contact</p>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <p className="text-sm font-medium mb-4 tracking-wider uppercase" style={{ color: 'var(--text-secondary)' }}>Contact</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: 'var(--foreground)' }}>
             Let's work together
           </h2>
         </motion.div>
@@ -79,7 +79,7 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div>
-            <p className="text-zinc-400 text-lg mb-8 leading-relaxed">
+            <p className="text-lg mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
               I'm always interested in hearing about new projects and opportunities.
               Whether you have a question or just want to say hi, feel free to reach out.
             </p>
@@ -95,12 +95,16 @@ export default function Contact() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ x: 4 }}
-                  className="flex items-center gap-4 p-4 border border-zinc-900 rounded-xl hover:border-zinc-800 transition-colors group"
+                  className="flex items-center gap-4 p-4 rounded-xl transition-colors group"
+                  style={{
+                    borderWidth: '1px',
+                    borderColor: 'var(--border-color)'
+                  }}
                 >
-                  <link.icon className="text-xl text-zinc-400 group-hover:text-white transition-colors" />
+                  <link.icon className="text-xl transition-colors" style={{ color: 'var(--text-secondary)' }} />
                   <div>
-                    <p className="text-sm text-zinc-500">{link.label}</p>
-                    <p className="text-zinc-300">{link.value}</p>
+                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{link.label}</p>
+                    <p style={{ color: 'var(--foreground)' }}>{link.value}</p>
                   </div>
                 </motion.a>
               ))}
@@ -118,31 +122,49 @@ export default function Contact() {
             className="space-y-6"
           >
             <div>
-              <label className="block text-sm text-zinc-400 mb-2">Name</label>
+              <label className="block text-sm mb-2" style={{ color: 'var(--text-secondary)' }}>Name</label>
               <input
                 type="text"
                 name="user_name"
-                className="w-full px-4 py-3 bg-zinc-950 border border-zinc-900 rounded-xl text-white focus:outline-none focus:border-zinc-700 transition-colors"
+                className="w-full px-4 py-3 rounded-xl focus:outline-none transition-colors"
+                style={{
+                  backgroundColor: 'var(--badge-bg)',
+                  borderWidth: '1px',
+                  borderColor: 'var(--border-color)',
+                  color: 'var(--foreground)'
+                }}
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm text-zinc-400 mb-2">Email</label>
+              <label className="block text-sm mb-2" style={{ color: 'var(--text-secondary)' }}>Email</label>
               <input
                 type="email"
                 name="user_email"
-                className="w-full px-4 py-3 bg-zinc-950 border border-zinc-900 rounded-xl text-white focus:outline-none focus:border-zinc-700 transition-colors"
+                className="w-full px-4 py-3 rounded-xl focus:outline-none transition-colors"
+                style={{
+                  backgroundColor: 'var(--badge-bg)',
+                  borderWidth: '1px',
+                  borderColor: 'var(--border-color)',
+                  color: 'var(--foreground)'
+                }}
                 required
               />
             </div>
 
             <div>
-              <label className="block text-sm text-zinc-400 mb-2">Message</label>
+              <label className="block text-sm mb-2" style={{ color: 'var(--text-secondary)' }}>Message</label>
               <textarea
                 name="message"
                 rows={6}
-                className="w-full px-4 py-3 bg-zinc-950 border border-zinc-900 rounded-xl text-white focus:outline-none focus:border-zinc-700 transition-colors resize-none"
+                className="w-full px-4 py-3 rounded-xl focus:outline-none transition-colors resize-none"
+                style={{
+                  backgroundColor: 'var(--badge-bg)',
+                  borderWidth: '1px',
+                  borderColor: 'var(--border-color)',
+                  color: 'var(--foreground)'
+                }}
                 required
               />
             </div>
@@ -166,7 +188,11 @@ export default function Contact() {
               disabled={isSubmitting}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full px-8 py-3 bg-white text-black rounded-xl font-medium hover:bg-zinc-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-8 py-3 rounded-xl font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              style={{
+                backgroundColor: 'var(--button-primary-bg)',
+                color: 'var(--button-primary-text)'
+              }}
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </motion.button>
@@ -179,7 +205,11 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-32 pt-8 border-t border-zinc-900 text-center text-zinc-500 text-sm"
+          className="mt-32 pt-8 border-t text-center text-sm"
+          style={{
+            borderColor: 'var(--border-color)',
+            color: 'var(--text-secondary)'
+          }}
         >
           <p>© 2025 Pranay Gurav. Built with Next.js & Tailwind CSS</p>
         </motion.div>
