@@ -61,7 +61,7 @@ export default function About() {
             <div className="space-y-4">
               <p>
                 I specialize in building <span className="text-white font-medium">modern, scalable web applications</span> using the MERN stack
-                and .NET, focusing on creating seamless user experiences and robust backend architectures.
+                , focusing on creating seamless user experiences and robust backend architectures.
               </p>
               <p>
                 Every project is a learning opportunity, and I'm constantly pushing myself to master new technologies

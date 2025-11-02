@@ -152,7 +152,7 @@ export default function Hero() {
               ease: "easeOut"
             }}
           >
-            Full-stack developer specializing in <span className="text-white font-medium">MERN stack</span> and <span className="text-white font-medium">.NET</span> technologies.
+            Full-stack developer specializing in <span className="text-white font-medium">MERN stack </span> <br></br>
             Creating scalable, modern applications that deliver exceptional user experiences and drive business growth.
           </motion.p>
 
