@@ -143,7 +143,7 @@ export default function Hero() {
 
           {/* Description - Fades in after heading */}
           <motion.p
-            className="text-base md:text-lg text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed"
+            className="text-sm sm:text-base md:text-lg text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -152,7 +152,7 @@ export default function Hero() {
               ease: "easeOut"
             }}
           >
-            Full-stack developer specializing in <span className="text-white font-medium">MERN stack </span> <br></br>
+            Full-stack developer specializing in <span className="text-white font-medium">MERN stack</span> and <span className="text-white font-medium">.NET</span> technologies.
             Creating scalable, modern applications that deliver exceptional user experiences and drive business growth.
           </motion.p>
 
