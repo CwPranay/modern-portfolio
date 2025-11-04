@@ -16,6 +16,7 @@ import {
 	SiPython,
 	SiPandas,
 	SiNumpy,
+	SiDocker,
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 import { section } from 'framer-motion/client';
@@ -51,6 +52,7 @@ export default function Skills() {
 		{ name: 'Java', icon: FaJava, color: '#007396', category: 'Language' },
 		{ name: '.NET', icon: SiDotnet, color: '#512BD4', category: 'Backend' },
 		{ name: 'Git', icon: SiGit, color: '#F05032', category: 'Tools' },
+		{ name: 'Docker', icon: SiDocker, color: '#2496ED', category: 'DevOps' },
 		{ name: 'Python', icon: SiPython, color: '#3776AB', category: 'Language' },
 		{ name: 'Pandas', icon: SiPandas, color: '#150458', category: 'AI/ML' },
 		{ name: 'NumPy', icon: SiNumpy, color: '#013243', category: 'AI/ML' },

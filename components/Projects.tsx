@@ -18,7 +18,7 @@ export default function Projects() {
     {
       title: 'AgroInsight',
       description: 'A web platform built to empower farmers with real-time crop prices, weather forecasts, and AI-based insights. Uses external APIs and caching for performance and reliability.',
-      tech: ['Next.js', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Chart.js', 'Agmarknet API'],
+      tech: ['Next.js', 'TypeScript', 'Node.js', 'Docker', 'Tailwind CSS', 'Chart.js', 'Agmarknet API'],
       liveUrl: 'https://agro-insights.vercel.app/',
       codeUrl: 'https://github.com/CwPranay/AgroInsight',
       image: '/projects/agroinsight.png',
