@@ -137,7 +137,7 @@ export default function About() {
               Let's Connect
             </motion.a>
             <motion.a
-              href="/resume/Pranay_Gurav_Resume.pdf"
+              href="/resume/PranayPradipGurav__FullStackDev.pdf"
               download="Pranay_Gurav_Resume.pdf"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
