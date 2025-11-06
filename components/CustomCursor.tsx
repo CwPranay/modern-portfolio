@@ -19,7 +19,7 @@ export default function CustomCursor() {
     useEffect(() => {
         // Check initial theme
         setIsLight(document.documentElement.classList.contains('light'));
-        
+
         // Listen for theme changes via custom event (no MutationObserver needed)
         const handleThemeChange = () => {
             setIsLight(document.documentElement.classList.contains('light'));
