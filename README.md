@@ -1,184 +1,85 @@
-# 🎨 Modern MERN Stack Portfolio
+# Modern Portfolio
 
-A stunning, minimalist portfolio website built with Next.js 15, TypeScript, Tailwind CSS, and Framer Motion. Designed to impress both users and hiring managers with its sophisticated aesthetic and smooth interactions.
+A sleek, modern portfolio website built with Next.js 16, featuring smooth animations, dark/light theme support, and an interactive custom cursor.
 
-## ✨ Key Features
+## ✨ Features
 
-### Design Philosophy
-- **Minimalist Aesthetic** - Clean black background with refined zinc grays
-- **Subtle Sophistication** - Elegant gradients and micro-interactions
-- **Professional Layout** - Typography-focused with generous white space
-- **Modern UX** - Smooth animations that enhance, not distract
+- **Modern Design** - Clean, minimal interface with smooth animations
+- **Dark/Light Theme** - Seamless theme switching with persistent preferences
+- **Custom Cursor** - Interactive cursor effects (desktop only)
+- **Responsive** - Fully optimized for mobile, tablet, and desktop
+- **Fast Performance** - Built with Next.js 16 and optimized for speed
+- **Contact Form** - Integrated email functionality with EmailJS
+- **Type-Safe** - Written in TypeScript for better development experience
 
-### Sections Included
-1. **Hero** - Eye-catching introduction with animated grid background and availability badge
-2. **About** - Personal story with impressive stats showcase
-3. **Skills** - Tech stack displayed with interactive icon grid
-4. **Projects** - Featured work with detailed descriptions and live demos
-5. **Experience** - Timeline-based work history
-6. **Testimonials** - Client feedback and recommendations
-7. **Contact** - Professional contact form with social links
+## 🚀 Tech Stack
 
-### Technical Highlights
-- ⚡ **Next.js 15** - Latest App Router with server components
-- 🎭 **Framer Motion** - Smooth, performant animations
-- 🎨 **Tailwind CSS** - Utility-first styling with custom design system
-- 📱 **Fully Responsive** - Perfect on all devices
-- ♿ **Accessible** - WCAG compliant with semantic HTML
-- 🚀 **Optimized** - Fast loading and excellent Lighthouse scores
+- **Framework:** Next.js 16
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4
+- **Animations:** Framer Motion
+- **Icons:** React Icons
+- **Email:** EmailJS
 
-## 🚀 Quick Start
+## 📦 Installation
 
 ```bash
-# Navigate to project
-cd portfolio
+# Clone the repository
+git clone https://github.com/CwPranay/modern-portfolio.git
 
-# Install dependencies (already done)
+# Navigate to project directory
+cd modern-portfolio
+
+# Install dependencies
 npm install
 
 # Run development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see your portfolio.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## 🎨 Customization Guide
+## 🛠️ Available Scripts
 
-### 1. Personal Information
-
-**Hero Section** (`components/Hero.tsx`)
-- Update availability status
-- Change your title/role
-- Add your social media links (GitHub, LinkedIn, Twitter)
-
-**About Section** (`components/About.tsx`)
-- Write your personal story
-- Update stats (years, projects, etc.)
-- Customize the description
-
-### 2. Professional Content
-
-**Skills Section** (`components/Skills.tsx`)
-- Add/remove technologies
-- Update tech stack icons
-- Reorder based on expertise
-
-**Projects Section** (`components/Projects.tsx`)
-- Add your real projects
-- Update descriptions and tech stacks
-- Link to GitHub repos and live demos
-- Mark featured projects
-- Customize gradient colors
-
-**Experience Section** (`components/Experience.tsx`)
-- Add your work history
-- Update job titles and companies
-- Include dates and descriptions
-
-**Testimonials Section** (`components/Testimonials.tsx`)
-- Add client testimonials
-- Update names and roles
-- Customize avatars
-
-### 3. Contact Information
-
-**Contact Section** (`components/Contact.tsx`)
-- Update email address
-- Add social media profiles
-- Configure form submission endpoint
-- Customize contact methods
-
-### 4. Branding
-
-**Navbar** (`components/Navbar.tsx`)
-- Change logo/name
-- Customize navigation items
-
-**Colors** (`app/globals.css`)
-- Modify gradient colors
-- Adjust accent colors
-- Update hover states
-
-## 📦 Build & Deploy
-
-### Build for Production
 ```bash
-npm run build
-npm start
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run start    # Start production server
+npm run lint     # Run ESLint
 ```
 
-### Deploy to Vercel (Recommended)
-```bash
-# Install Vercel CLI
-npm i -g vercel
+## 📁 Project Structure
 
-# Deploy
-vercel
+```
+portfolio/
+├── app/              # Next.js app directory
+├── components/       # React components
+├── public/           # Static assets
+├── styles/           # Global styles
+└── package.json      # Dependencies
 ```
 
-Or connect your GitHub repository to Vercel for automatic deployments.
+## 🎨 Customization
 
-### Other Platforms
-- **Netlify**: Connect GitHub repo
-- **Cloudflare Pages**: Git integration
-- **AWS Amplify**: Deploy via console
+1. **Personal Info** - Update content in component files
+2. **Theme Colors** - Modify Tailwind config
+3. **Email Setup** - Configure EmailJS credentials
+4. **Favicon** - Replace `PG.svg` in public folder
 
-## 🎯 What Makes This Portfolio Stand Out
+## 📄 License
 
-### For Users
-- Clean, distraction-free design
-- Smooth, delightful interactions
-- Easy navigation and clear CTAs
-- Fast loading times
-- Mobile-friendly experience
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### For Hiring Managers
-- Professional presentation
-- Clear demonstration of skills
-- Real project examples
-- Testimonials and credibility
-- Easy to contact
+## 👤 Author
 
-### Technical Excellence
-- Modern tech stack (MERN + Next.js)
-- Clean, maintainable code
-- Best practices throughout
-- Performance optimized
-- SEO friendly
+**Pranay Gurav**
 
-## 🛠️ Tech Stack
+- GitHub: [@CwPranay](https://github.com/CwPranay)
 
-- **Framework:** Next.js 15 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion
-- **Icons:** React Icons
-- **Runtime:** React 19
+## 🤝 Contributing
 
-## 📊 Performance
-
-- Lighthouse Score: 95+
-- First Contentful Paint: < 1s
-- Time to Interactive: < 2s
-- Fully optimized assets
-
-## 🎓 Learning Resources
-
-Built with modern best practices:
-- Server Components
-- Client Components where needed
-- Optimized animations
-- Responsive design patterns
-- Accessibility standards
-
-## 📝 License
-
-MIT - Feel free to use this template for your own portfolio!
-
-## 🤝 Support
-
-Found this helpful? Give it a ⭐ on GitHub!
+Contributions, issues, and feature requests are welcome!
 
 ---
 
-**Built with ❤️ using Next.js, TypeScript & Tailwind CSS**
+Made with ❤️ using Next.js
