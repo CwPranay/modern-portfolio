@@ -8,6 +8,7 @@ export default function CustomCursor() {
     const [cursorVariant, setCursorVariant] = useState('default');
     const [ripples, setRipples] = useState<{ id: number; x: number; y: number }[]>([]);
     const [isLight, setIsLight] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     const cursorX = useMotionValue(-100);
     const cursorY = useMotionValue(-100);
@@ -17,6 +18,16 @@ export default function CustomCursor() {
     const cursorYSpring = useSpring(cursorY, springConfig);
 
     useEffect(() => {
+        // Check if device is mobile/tablet
+        const checkMobile = () => {
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            const isMobileWidth = window.innerWidth <= 1024;
+            setIsMobile(isTouchDevice || isMobileWidth);
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
         // Check initial theme
         setIsLight(document.documentElement.classList.contains('light'));
 
@@ -77,6 +88,7 @@ export default function CustomCursor() {
         });
 
         return () => {
+            window.removeEventListener('resize', checkMobile);
             window.removeEventListener('themechange', handleThemeChange);
             window.removeEventListener('mousemove', moveCursor);
             window.removeEventListener('click', handleClick);
@@ -96,6 +108,11 @@ export default function CustomCursor() {
     };
 
     const cursorColor = getCursorColor();
+
+    // Don't render custom cursor on mobile devices
+    if (isMobile) {
+        return null;
+    }
 
     return (
         <>
