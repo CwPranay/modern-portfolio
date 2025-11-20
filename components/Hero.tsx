@@ -18,7 +18,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative min-h-[90vh] flex items-center px-4 sm:px-6 lg:px-12 pt-24 pb-12 overflow-hidden bg-gradient-to-br from-[#0d1117] via-[#0b0f1a] to-[#0d1117]">
+    <section className="relative min-h-[90vh] flex items-center px-4 sm:px-6 lg:px-12 pt-24 pb-12 overflow-hidden bg-linear-to-br from-[#0d1117] via-[#0b0f1a] to-[#0d1117]">
       {/* Floating particles background - reduced opacity */}
       <div className="absolute inset-0 overflow-hidden">
         {particles.map((particle, i) => (
@@ -81,12 +81,12 @@ export default function Hero() {
               <span className="text-white">I build fast,</span>
               <br />
               <span className="text-white">scalable </span>
-              <span className="bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
                 Next.js
               </span>
               <br />
               <span className="text-white">& </span>
-              <span className="bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
                 MERN apps
               </span>
               <br />
@@ -134,7 +134,7 @@ export default function Hero() {
                 href="#projects"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-8 py-4 bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] text-white rounded-xl font-semibold shadow-md transition-all"
+                className="px-8 py-4 bg-linear-to-r from-[#3b82f6] to-[#06b6d4] text-white rounded-xl font-semibold shadow-md transition-all"
               >
                 See What I've Built
               </motion.a>
@@ -210,7 +210,7 @@ export default function Hero() {
 
             {/* Floating badge - no glow */}
             <motion.div
-              className="absolute -top-3 -left-3 px-3 py-1.5 bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] text-white rounded-full text-xs font-semibold shadow-sm z-10 flex items-center gap-1.5"
+              className="absolute -top-3 -left-3 px-3 py-1.5 bg-linear-to-r from-[#3b82f6] to-[#06b6d4] text-white rounded-full text-xs font-semibold shadow-sm z-10 flex items-center gap-1.5"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
             >

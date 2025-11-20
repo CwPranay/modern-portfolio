@@ -22,7 +22,7 @@ export default function About() {
           >
             {/* Morphing Gradient Blob - reduced */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="morph-blob w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-[#3b82f6] via-[#06b6d4] to-[#a78bfa] rounded-full opacity-[0.20] blur-[100px]"></div>
+              <div className="morph-blob w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-linear-to-br from-[#3b82f6] via-[#06b6d4] to-[#a78bfa] rounded-full opacity-[0.20] blur-[100px]"></div>
             </div>
 
             {/* Floating Glass Card - no glow */}
@@ -32,11 +32,11 @@ export default function About() {
               className="relative z-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-lg max-w-sm w-full animate-[float_6s_ease-in-out_infinite]"
             >
               {/* Gradient accent line */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#3b82f6] via-[#06b6d4] to-[#a78bfa] rounded-t-2xl"></div>
+              <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-[#3b82f6] via-[#06b6d4] to-[#a78bfa] rounded-t-2xl"></div>
 
               <div className="relative space-y-6">
                 {/* Icon Circle - no glow */}
-                <div className="w-16 h-16 bg-gradient-to-br from-[#3b82f6] to-[#06b6d4] rounded-2xl flex items-center justify-center shadow-md">
+                <div className="w-16 h-16bg-linear-to-br from-[#3b82f6] to-[#06b6d4] rounded-2xl flex items-center justify-center shadow-md">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                   </svg>
@@ -50,7 +50,7 @@ export default function About() {
 
                 {/* Badges - no glow */}
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1.5 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-400 text-xs font-semibold">
+                  <span className="px-3 py-1.5 bg-linear-to-r from-blue-500/10 to-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-400 text-xs font-semibold">
                     Next.js Expert
                   </span>
                   <span className="px-3 py-1.5 bg-white/5 border border-cyan-400/20 rounded-full text-cyan-400 text-xs font-semibold">
@@ -68,7 +68,7 @@ export default function About() {
                       <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
-                      15+
+                      10+
                     </p>
                     <p className="text-xs text-gray-400">Projects</p>
                   </div>
@@ -100,7 +100,7 @@ export default function About() {
               </p>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Building the Future,{' '}
-                <span className="bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
                   One Line at a Time
                 </span>
               </h2>
@@ -180,7 +180,7 @@ export default function About() {
                 download="Pranay_Gurav_Resume.pdf"
                 whileHover={{ scale: 1.02, x: 5 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] text-white rounded-xl font-medium shadow-md transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-[#3b82f6] to-[#06b6d4] text-white rounded-xl font-medium shadow-md transition-all"
               >
                 <span>Download Resume</span>
                 <FaArrowRight className="text-sm" />

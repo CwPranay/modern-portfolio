@@ -78,7 +78,7 @@ export default function Projects() {
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Featured{' '}
-            <span className="bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">
               Case Studies
             </span>
           </h2>
@@ -109,7 +109,7 @@ export default function Projects() {
                 className={`relative group ${index % 2 === 1 ? 'lg:order-2' : ''} lg:mt-8`}
               >
                 {/* Subtle glow behind image */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 rounded-xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-cyan-500/5 rounded-xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 {/* Image container with premium card feel */}
                 <div onClick={()=>{window.location.href=project.liveUrl}} className="relative bg-white/3 rounded-xl p-2 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.45)] border border-white/10">
@@ -120,7 +120,7 @@ export default function Projects() {
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-[1.01]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 </div>
               </motion.div>
@@ -145,7 +145,7 @@ export default function Projects() {
                       key={badge}
                       className={`px-3 py-1 rounded-full text-xs font-medium ${
                         badge === 'Next.js Powered'
-                          ? 'bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-cyan-400/30 text-cyan-400'
+                          ? 'bg-linear-to-r from-blue-500/10 to-cyan-500/10 border border-cyan-400/30 text-cyan-400'
                           : 'bg-white/5 border border-cyan-400/20 text-cyan-400'
                       }`}
                     >
@@ -200,7 +200,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.98 }}
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] text-white rounded-lg font-medium text-sm shadow-[0_3px_10px_rgba(0,0,0,0.4)] hover:-translate-y-[2px] transition-all duration-300"
+                    className="flex items-center gap-2 px-4 py-2 bg-linear-to-r from-[#3b82f6] to-[#06b6d4] text-white rounded-lg font-medium text-sm shadow-[0_3px_10px_rgba(0,0,0,0.4)] hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <FaExternalLinkAlt className="text-xs" />
                     <span>Live Demo</span>
@@ -213,7 +213,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       whileHover={{ y: -2 }}
                       whileTap={{ scale: 0.98 }}
-                      className="flex items-center gap-2 px-4 py-2 border border-white/10 hover:border-white/20 text-gray-300 hover:text-white rounded-lg font-medium text-sm shadow-[0_3px_10px_rgba(0,0,0,0.4)] hover:-translate-y-[2px] transition-all duration-300"
+                      className="flex items-center gap-2 px-4 py-2 border border-white/10 hover:border-white/20 text-gray-300 hover:text-white rounded-lg font-medium text-sm shadow-[0_3px_10px_rgba(0,0,0,0.4)] hover:-translate-y-0.5 transition-all duration-300"
                     >
                       <FaGithub className="text-xs" />
                       <span>View Code</span>
