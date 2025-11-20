@@ -1,131 +1,67 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export default function CustomCursor() {
     const [isHovering, setIsHovering] = useState(false);
-    const [cursorVariant, setCursorVariant] = useState('default');
-    const [ripples, setRipples] = useState<{ id: number; x: number; y: number }[]>([]);
-    const [isLight, setIsLight] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
     const cursorX = useMotionValue(-100);
     const cursorY = useMotionValue(-100);
 
-    const springConfig = { damping: 25, stiffness: 200 };
+    const springConfig = { damping: 20, stiffness: 300 }; // faster & visible
     const cursorXSpring = useSpring(cursorX, springConfig);
     const cursorYSpring = useSpring(cursorY, springConfig);
 
     useEffect(() => {
-        // Check if device is mobile/tablet
         const checkMobile = () => {
-            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-            const isMobileWidth = window.innerWidth <= 1024;
-            setIsMobile(isTouchDevice || isMobileWidth);
+            const touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            setIsMobile(touch || window.innerWidth <= 1024);
         };
-        
+
         checkMobile();
         window.addEventListener('resize', checkMobile);
-
-        // Check initial theme
-        setIsLight(document.documentElement.classList.contains('light'));
-
-        // Listen for theme changes via custom event (no MutationObserver needed)
-        const handleThemeChange = () => {
-            setIsLight(document.documentElement.classList.contains('light'));
-        };
-        window.addEventListener('themechange', handleThemeChange);
 
         const moveCursor = (e: MouseEvent) => {
             cursorX.set(e.clientX);
             cursorY.set(e.clientY);
         };
 
-        const handleClick = (e: MouseEvent) => {
-            const ripple = {
-                id: Date.now(),
-                x: e.clientX,
-                y: e.clientY,
-            };
-            setRipples(prev => [...prev, ripple]);
-
-            setTimeout(() => {
-                setRipples(prev => prev.filter(r => r.id !== ripple.id));
-            }, 600);
-        };
-
-        const handleMouseEnter = (e: Event) => {
-            const target = e.target as HTMLElement;
-
-            if (target.tagName === 'A' || target.tagName === 'BUTTON') {
-                setIsHovering(true);
-                setCursorVariant('link');
-            } else if (target.closest('a') || target.closest('button')) {
-                setIsHovering(true);
-                setCursorVariant('link');
-            } else if (target.classList.contains('project-card') || target.closest('.group')) {
-                setIsHovering(true);
-                setCursorVariant('project');
-            } else if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') {
-                setIsHovering(true);
-                setCursorVariant('input');
-            }
-        };
-
-        const handleMouseLeave = () => {
-            setIsHovering(false);
-            setCursorVariant('default');
-        };
-
         window.addEventListener('mousemove', moveCursor);
-        window.addEventListener('click', handleClick);
 
-        const interactiveElements = document.querySelectorAll('a, button, input, textarea, .group');
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', handleMouseEnter);
-            el.addEventListener('mouseleave', handleMouseLeave);
-        });
+        const interactive = document.querySelectorAll('a, button, .cursor-hover');
+
+        interactive.forEach((el) =>
+            el.addEventListener('mouseenter', () => setIsHovering(true))
+        );
+        interactive.forEach((el) =>
+            el.addEventListener('mouseleave', () => setIsHovering(false))
+        );
 
         return () => {
-            window.removeEventListener('resize', checkMobile);
-            window.removeEventListener('themechange', handleThemeChange);
             window.removeEventListener('mousemove', moveCursor);
-            window.removeEventListener('click', handleClick);
-            interactiveElements.forEach(el => {
-                el.removeEventListener('mouseenter', handleMouseEnter);
-                el.removeEventListener('mouseleave', handleMouseLeave);
-            });
+            window.removeEventListener('resize', checkMobile);
         };
-    }, [cursorX, cursorY]);
+    }, []);
 
-    // Get colors based on variant and theme
-    const getCursorColor = () => {
-        if (cursorVariant === 'link') return { dot: '#60a5fa', ring: '#60a5fa' };
-        if (cursorVariant === 'project') return { dot: '#22d3ee', ring: '#22d3ee' };
-        if (cursorVariant === 'input') return { dot: '#4ade80', ring: '#4ade80' };
-        return { dot: isLight ? '#000000' : '#ffffff', ring: isLight ? '#000000' : '#ffffff' };
-    };
-
-    const cursorColor = getCursorColor();
-
-    // Don't render custom cursor on mobile devices
-    if (isMobile) {
-        return null;
-    }
+    if (isMobile) return null;
 
     return (
         <>
-            {/* Hide default cursor */}
+            {/* REMOVE the “cursor:none” except for the ring element */}
             <style jsx global>{`
-                * {
-                    cursor: none !important;
+                body {
+                    cursor: pointer;
+                }
+                a, button {
+                    cursor: pointer;
                 }
             `}</style>
 
-            {/* Outer Ring */}
+            {/* Cursor Ring */}
             <motion.div
-                className="fixed top-0 left-0 pointer-events-none z-[9999]"
+                className="fixed pointer-events-none z-[9999] rounded-full"
                 style={{
                     x: cursorXSpring,
                     y: cursorYSpring,
@@ -134,82 +70,22 @@ export default function CustomCursor() {
                 }}
             >
                 <motion.div
+                    className="rounded-full border border-[#3B82F6]"
                     animate={{
-                        width: isHovering ? 0 : 40,
-                        height: isHovering ? 0 : 40,
-                        borderWidth: 2,
-                        opacity: isHovering ? 0 : 1,
+                        width: isHovering ? 28 : 14,
+                        height: isHovering ? 28 : 14,
+                        boxShadow: isHovering
+                            ? '0 0 20px rgba(164, 197, 252, 0.5)'
+                            : '0 0 10px rgba(62, 129, 236, 0.3)',
+                        backgroundColor: 'rgba(59,130,246,0.15)',
                     }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                    className="rounded-full border"
-                    style={{
-                        borderColor: cursorColor.ring,
-                        boxShadow: '0 0 0 1px rgba(0,0,0,0.1)'
+                    transition={{
+                        type: 'spring',
+                        stiffness: 400,
+                        damping: 28,
                     }}
                 />
             </motion.div>
-
-            {/* Inner Dot */}
-            <motion.div
-                className="fixed top-0 left-0 pointer-events-none z-[9999] rounded-full"
-                style={{
-                    x: cursorX,
-                    y: cursorY,
-                    translateX: '-50%',
-                    translateY: '-50%',
-                    backgroundColor: cursorColor.dot,
-                    boxShadow: '0 0 0 1px rgba(0,0,0,0.1)'
-                }}
-                animate={{
-                    width: isHovering ? 12 : 8,
-                    height: isHovering ? 12 : 8,
-                }}
-                transition={{ type: 'spring', stiffness: 500, damping: 28 }}
-            />
-
-            {/* Glow Effect */}
-            <motion.div
-                className="fixed top-0 left-0 pointer-events-none z-[9998] rounded-full blur-xl"
-                style={{
-                    x: cursorXSpring,
-                    y: cursorYSpring,
-                    translateX: '-50%',
-                    translateY: '-50%',
-                    backgroundColor: cursorColor.dot,
-                    opacity: isHovering ? 0.3 : 0,
-                }}
-                animate={{
-                    width: isHovering ? 100 : 0,
-                    height: isHovering ? 100 : 0,
-                }}
-                transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-            />
-
-            {/* Click Ripple Effects */}
-            <AnimatePresence>
-                {ripples.map((ripple) => (
-                    <motion.div
-                        key={ripple.id}
-                        className="fixed top-0 left-0 pointer-events-none z-[9997] rounded-full border-2"
-                        style={{
-                            left: ripple.x,
-                            top: ripple.y,
-                            translateX: '-50%',
-                            translateY: '-50%',
-                            borderColor: cursorColor.ring,
-                            boxShadow: '0 0 0 1px rgba(0,0,0,0.1)'
-                        }}
-                        initial={{ width: 0, height: 0, opacity: 1 }}
-                        animate={{
-                            width: 80,
-                            height: 80,
-                            opacity: 0,
-                        }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.6, ease: 'easeOut' }}
-                    />
-                ))}
-            </AnimatePresence>
         </>
     );
 }
