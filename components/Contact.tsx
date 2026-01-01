@@ -216,7 +216,7 @@ export default function Contact() {
           transition={{ delay: 0.5 }}
           className="mt-32 pt-8 border-t border-white/10 text-center text-sm text-gray-400"
         >
-          <p>© 2025 Pranay Gurav. Built with Next.js & Tailwind CSS</p>
+          <p>© 2026 Pranay Gurav. Built with Next.js & Tailwind CSS</p>
         </motion.div>
       </div>
     </section>
