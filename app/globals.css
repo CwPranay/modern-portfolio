@@ -1,122 +1,51 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
-  --text-secondary: #a1a1aa;
-  --border-color: #3f3f46;
-  --badge-bg: rgba(24, 24, 27, 0.5);
-  --card-bg: rgba(0, 0, 0, 0.5);
-  --button-primary-bg: #ffffff;
-  --button-primary-text: #000000;
-  --grid-color: #18181b;
-  --navbar-bg: rgba(0, 0, 0, 0.8);
-  --card-shadow: none;
-  --cursor-color: #ffffff;
+  --background: #0B0F14;
+  --card-bg: #111827;
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --text-primary: #E5E7EB;
+  --text-muted: #9CA3AF;
+  --border: #1F2933;
+  --navbar-bg: rgba(11, 15, 20, 0.95);
 }
 
-.light {
-  --background: #ffffff;
-  --foreground: #000000;
-  --text-secondary: #52525b;
-  --border-color: #e5e7eb;
-  --badge-bg: rgba(249, 250, 251, 0.95);
-  --card-bg: #ffffff;
-  --button-primary-bg: #000000;
-  --button-primary-text: #ffffff;
-  --grid-color: #e4e4e7;
-  --navbar-bg: rgba(255, 255, 255, 0.8);
-  --card-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
-  --icon-invert: 1;
-  --cursor-color: #000000;
-}
-
-/* NO transitions on theme change - instant switch for performance */
 html {
-  transition: none;
   scroll-behavior: smooth;
 }
 
-/* Only animate the toggle button itself */
-.theme-toggle-button {
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.theme-toggle-slider {
-  transition: left 0.2s ease, background-color 0.2s ease;
-}
-
-/* Disable transition-all on large containers - use specific properties */
-/* This prevents lag during theme changes */
-
 body {
   background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: default;
+  line-height: 1.6;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+/* Professional cursor styles */
+a, button, [role="button"], input[type="submit"], input[type="button"] {
+  cursor: pointer;
 }
 
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
+input, textarea, select {
+  cursor: text;
 }
 
-.light ::-webkit-scrollbar-track {
-  background: #f5f5f5;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
-}
-
-.light ::-webkit-scrollbar-thumb {
-  background: #ccc;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.light ::-webkit-scrollbar-thumb:hover {
-  background: #999;
-}
-
-/* Morphing Blob Animation */
-@keyframes morph {
-  0%, 100% {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    transform: rotate(0deg) scale(1);
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
   }
-  25% {
-    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-    transform: rotate(90deg) scale(1.1);
+  
+  html {
+    -webkit-text-size-adjust: 100%;
   }
-  50% {
-    border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
-    transform: rotate(180deg) scale(0.95);
-  }
-  75% {
-    border-radius: 60% 40% 60% 40% / 70% 30% 50% 60%;
-    transform: rotate(270deg) scale(1.05);
-  }
-}
-
-.morph-blob {
-  animation: morph 20s ease-in-out infinite;
-}
-
-/* Floating Animation */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
+  
+  body {
+    -webkit-overflow-scrolling: touch;
   }
 }

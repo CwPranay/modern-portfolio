@@ -1,25 +1,43 @@
-# Modern Portfolio
+# Pranay Gurav - Full-Stack Developer Portfolio
 
-A sleek, modern portfolio website built with Next.js 16, featuring smooth animations, dark/light theme support, and an interactive custom cursor.
+A clean, professional portfolio website showcasing full-stack development projects. Built with Next.js, React, and the MERN stack with a focus on minimalism and professionalism.
 
 ## ✨ Features
 
-- **Modern Design** - Clean, minimal interface with smooth animations
-- **Dark/Light Theme** - Seamless theme switching with persistent preferences
-- **Custom Cursor** - Interactive cursor effects (desktop only)
-- **Responsive** - Fully optimized for mobile, tablet, and desktop
-- **Fast Performance** - Built with Next.js 16 and optimized for speed
+- **Clean Design** - Minimal, professional interface inspired by Vercel, Stripe, and Linear
+- **Production Projects** - Showcasing real-world applications with detailed descriptions
+- **Fully Responsive** - Optimized for all devices (mobile, tablet, desktop)
+- **Fast Performance** - Built with Next.js 15 and optimized for Core Web Vitals
 - **Contact Form** - Integrated email functionality with EmailJS
-- **Type-Safe** - Written in TypeScript for better development experience
+- **Type-Safe** - Written in TypeScript
+
+## 🎨 Design System
+
+- **Background:** #0B0F14
+- **Card Background:** #111827
+- **Primary Color:** #2563EB
+- **Text Primary:** #E5E7EB
+- **Text Muted:** #9CA3AF
+- **Border:** #1F2933
+
+Clean, flat design with no gradients or glow effects. Professional and recruiter-friendly.
 
 ## 🚀 Tech Stack
 
-- **Framework:** Next.js 16
+- **Framework:** Next.js 15
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS 4
 - **Animations:** Framer Motion
 - **Icons:** React Icons
 - **Email:** EmailJS
+
+## 🎯 Featured Projects
+
+- **AplyO** - Full-stack MERN job application tracking platform
+- **Gym Website** - Performance-optimized fitness business website
+- **FixMyArea** - Bilingual community issue reporting system
+- **AgroInsight** - Data-driven dashboard for farmers
+- **OpenDesk** - GitHub-integrated collaboration platform
 
 ## 📦 Installation
 
@@ -61,10 +79,11 @@ portfolio/
 
 ## 🎨 Customization
 
-1. **Personal Info** - Update content in component files
-2. **Theme Colors** - Modify Tailwind config
-3. **Email Setup** - Configure EmailJS credentials
-4. **Favicon** - Replace `PG.svg` in public folder
+1. **Personal Info** - Update content in component files (Hero, About, Projects, Experience)
+2. **Projects** - Modify project data in `components/Projects.tsx`
+3. **Theme Colors** - Modify Tailwind config and CSS variables
+4. **Email Setup** - Configure EmailJS credentials in `components/Contact.tsx`
+5. **Favicon** - Replace `PG.svg` in public folder
 
 ## 📄 License
 
@@ -72,9 +91,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👤 Author
 
-**Pranay Gurav**
+**Pranay Gurav** - Full-Stack Developer
 
+- Portfolio: [pranaygurav.vercel.app](https://pranaygurav.vercel.app)
 - GitHub: [@CwPranay](https://github.com/CwPranay)
+- LinkedIn: [/in/pranay-gurav](https://www.linkedin.com/in/pranay-gurav/)
 
 ## 🤝 Contributing
 

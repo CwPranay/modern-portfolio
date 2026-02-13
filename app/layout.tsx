@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import CustomCursor from "@/components/CustomCursor";
 import ThemeScript from "@/components/ThemeScript";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -31,7 +30,6 @@ export default function RootLayout({
         <ThemeScript />
       </head>
       <body className={inter.className}>
-        <CustomCursor />
         <Navbar />
         {children}
       </body>

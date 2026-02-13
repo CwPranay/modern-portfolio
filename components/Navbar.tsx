@@ -16,45 +16,43 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { label: 'My Story', href: 'about' },
-    { label: 'Tech I Use', href: 'skills' },
-    { label: 'Work', href: 'projects' },
-    { label: 'Career', href: 'experience' },
-    { label: 'Reach Out', href: 'contact' }
+    { label: 'About', href: 'about' },
+    { label: 'Skills', href: 'skills' },
+    { label: 'Projects', href: 'projects' },
+    { label: 'Experience', href: 'experience' },
+    { label: 'Contact', href: 'contact' }
   ];
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed w-full z-50 transition-all duration-300 backdrop-blur-xl ${
-        scrolled ? 'bg-[#0d1117]/90 border-b border-white/10' : 'bg-transparent'
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled ? 'bg-[rgba(11,15,20,0.95)] backdrop-blur-sm border-b border-[#1F2933]' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="relative flex items-center gap-1.5">
-            <span className="text-xl sm:text-2xl font-bold tracking-tight">
-              <span className="text-white">Pranay</span>
-              <span className="bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent">Gurav</span>
+          <Link href="/" className="flex items-center">
+            <span className="text-xl font-bold text-[#E5E7EB]">
+              Pranay <span className="text-[#2563EB]">Gurav</span>
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={`#${item.href}`}
-                className="text-sm text-gray-300 hover:text-white transition-colors relative group"
+                className="text-sm text-[#9CA3AF] hover:text-[#E5E7EB] transition-colors"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] group-hover:w-full transition-[width] duration-300" />
               </a>
             ))}
             <a
               href="#contact"
-              className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] text-white rounded-lg hover:shadow-lg hover:shadow-blue-500/25 transition-all"
+              className="px-4 py-2 text-sm font-medium bg-[#2563EB] text-white rounded-lg hover:bg-[#1D4ED8] transition-colors"
             >
               Hire Me
             </a>
@@ -64,7 +62,8 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white"
+              className="text-[#E5E7EB] p-2"
+              aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
             </button>
@@ -78,15 +77,15 @@ export default function Navbar() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="md:hidden border-t border-white/10 bg-[#0d1117]/95 backdrop-blur-xl"
+          className="md:hidden border-t border-[#1F2933] bg-[#0B0F14]"
         >
-          <div className="px-6 py-4 space-y-4">
+          <div className="px-4 py-4 space-y-3">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={`#${item.href}`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-gray-300 hover:text-white transition-colors"
+                className="block py-2 text-[#9CA3AF] hover:text-[#E5E7EB] transition-colors"
               >
                 {item.label}
               </a>
@@ -94,7 +93,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-4 py-2 text-sm font-medium bg-gradient-to-r from-[#3b82f6] to-[#06b6d4] text-white rounded-lg text-center"
+              className="block px-4 py-2 text-sm font-medium bg-[#2563EB] text-white rounded-lg text-center hover:bg-[#1D4ED8] transition-colors"
             >
               Hire Me
             </a>
