@@ -25,8 +25,8 @@ export default function About() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-[#E5E7EB] mb-2">Pranay Gurav</h3>
-                <p className="text-[#9CA3AF]">Full-Stack Developer</p>
+                <h3 className="text-2xl font-bold text-[#E5E7EB] mb-2">MERN Stack Developer</h3>
+                <p className="text-[#9CA3AF]">Building Production Web Apps</p>
               </div>
 
               <div className="flex flex-wrap gap-2">
