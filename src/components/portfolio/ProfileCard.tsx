@@ -10,7 +10,7 @@ export function ProfileCard() {
   const avatar = PlaceHolderImages.find((img) => img.id === "avatar");
 
   return (
-    <div className="lg:sticky lg:top-20 h-fit bg-card rounded-2xl p-6 border border-white/5 space-y-6">
+    <div className="bg-card rounded-2xl p-6 border border-white/5 space-y-6">
       <div className="relative w-full aspect-square rounded-xl overflow-hidden mb-6">
         <Image
           src={avatar?.imageUrl || "https://picsum.photos/seed/folioprofile/400/400"}
