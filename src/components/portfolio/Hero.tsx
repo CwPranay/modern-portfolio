@@ -87,15 +87,6 @@ export function Hero() {
                </div>
             </div>
           </div>
-          
-          <div className="flex items-center gap-3">
-             <Button size="sm" className="bg-primary hover:bg-primary/90 rounded-md text-xs px-4 h-9 font-bold shadow-lg shadow-primary/20">
-               Use Template for Free
-             </Button>
-             <Button size="sm" variant="secondary" className="bg-white text-black hover:bg-white/90 rounded-md text-xs px-4 h-9 font-bold">
-               More Templates
-             </Button>
-          </div>
         </div>
       </ScrollReveal>
     </section>
