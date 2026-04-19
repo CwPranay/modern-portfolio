@@ -4,7 +4,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Twitter, Mail, Globe } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
@@ -74,10 +74,10 @@ export function ProfileCard() {
 
       <div className="flex justify-center gap-3" style={{ transform: "translateZ(20px)" }}>
         {[
-          { icon: Github, href: "https://github.com" },
-          { icon: Linkedin, href: "https://linkedin.com" },
-          { icon: Twitter, href: "https://twitter.com" },
-          { icon: Mail, href: "mailto:hello@pranay.dev" },
+          { icon: Github, href: "https://github.com/Cwpranay" },
+          { icon: Linkedin, href: "https://linkedin.com/in/pranay-gurav" },
+          { icon: Twitter, href: "https://x.com/PranayyGurav" },
+          { icon: Mail, href: "mailto:prngurav@gmail.com" },
         ].map((social, i) => (
           <a
             key={i}
@@ -92,15 +92,17 @@ export function ProfileCard() {
       </div>
 
       <div className="pt-2" style={{ transform: "translateZ(40px)" }}>
-        <Button className="w-full h-12 rounded-xl text-base font-bold shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:scale-[1.03] active:scale-[0.98] bg-primary hover:bg-primary/90 transition-all duration-300">
-          Let's Talk
-        </Button>
+        <a href="#contact">
+          <Button className="w-full h-12 rounded-xl text-base font-bold shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:scale-[1.03] active:scale-[0.98] bg-primary hover:bg-primary/90 transition-all duration-300">
+            Hire Me
+          </Button>
+        </a>
       </div>
 
       <div className="pt-4 border-t border-white/5">
         <div className="flex items-center justify-center gap-2">
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Available for hire</span>
+          <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Available for opportunities</span>
         </div>
       </div>
     </motion.div>

@@ -5,7 +5,7 @@ import { ScrollReveal } from "./ScrollReveal";
 
 export function About() {
   return (
-    <section id="about" className="space-y-8 scroll-mt-20">
+    <section id="about" className="space-y-12 scroll-mt-20">
       <ScrollReveal>
         <div className="space-y-2">
           <h3 className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Introduction</h3>
@@ -13,41 +13,57 @@ export function About() {
         </div>
       </ScrollReveal>
 
-      <ScrollReveal delay={0.1}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="space-y-6 text-zinc-400 text-lg leading-relaxed">
-            <p>
-              I'm Pranay Gurav, a Full-stack Developer based in Mumbai. I focus on building real-world applications using the MERN stack and Next.js, with a strong emphasis on clean code and user-centric design.
-            </p>
-            <p>
-              My goal is to bridge the gap between complex backend logic and intuitive frontend experiences. Whether it's crafting scalable APIs or building interactive dashboards, I strive for excellence in every line of code.
-            </p>
-          </div>
-          <div className="space-y-6">
-            <div className="p-6 bg-card border border-white/5 rounded-2xl space-y-4">
-              <h4 className="text-white font-bold">Key Areas of Focus</h4>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-zinc-400 text-sm">
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  Full-stack MERN Development
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  Next.js & Server Components
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  REST & GraphQL APIs
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  Database Optimization
-                </li>
-              </ul>
+      <div className="space-y-12">
+        <ScrollReveal delay={0.1}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="space-y-6 text-zinc-400 text-lg leading-relaxed">
+              <h4 className="text-white font-bold text-xl">Who I Am</h4>
+              <p>
+                I'm a BSc IT Graduate and Full-Stack Developer specializing in Next.js and the MERN stack. I focus on building real-world, production-ready applications that solve practical problems and deliver strong user experiences.
+              </p>
+              <h4 className="text-white font-bold text-xl">What I Do</h4>
+              <p>
+                I design and develop modern web applications using Next.js, React, Node.js, Express, and MongoDB. My work includes building scalable APIs, authentication systems, dashboards, and cloud-deployed platforms.
+              </p>
+            </div>
+            <div className="space-y-6">
+              <div className="p-8 bg-card border border-white/5 rounded-2xl space-y-6">
+                <h4 className="text-white font-bold text-xl">Education</h4>
+                <div className="space-y-1">
+                  <p className="text-white font-bold">BSc IT</p>
+                  <p className="text-zinc-500 text-sm">Final Year • 2023 - 2026</p>
+                </div>
+                <div className="pt-4 border-t border-white/5">
+                  <h4 className="text-white font-bold mb-4">Core Focus</h4>
+                  <ul className="grid grid-cols-1 gap-3 text-zinc-400 text-sm">
+                    <li className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      Scalable Production Apps
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      Clean Architecture
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      Real-world Problem Solving
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </ScrollReveal>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.2}>
+          <div className="p-8 bg-card border border-white/5 rounded-2xl">
+            <h4 className="text-white font-bold text-xl mb-4">What Problems I Solve</h4>
+            <p className="text-zinc-400 text-lg leading-relaxed">
+              I create digital solutions for real use cases such as job application tracking systems, business websites, productivity tools, and data-driven dashboards. I aim to write clean, efficient code that helps users achieve real results.
+            </p>
+          </div>
+        </ScrollReveal>
+      </div>
     </section>
   );
 }

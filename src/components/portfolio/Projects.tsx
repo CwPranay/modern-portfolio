@@ -2,30 +2,57 @@
 "use client";
 
 import Image from "next/image";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { motion } from "framer-motion";
+import { Badge } from "@/components/ui/badge";
 
 export function Projects() {
   const projects = [
     {
-      title: "Elevate E-commerce",
-      category: "MERN Stack / Redux",
-      image: PlaceHolderImages.find(img => img.id === "project1")?.imageUrl || "https://picsum.photos/seed/p1/800/600",
-      link: "#",
+      title: "FixMyArea",
+      description: "A bilingual community issue reporting system with real-time status tracking, empowering citizens to report problems and hold authorities accountable.",
+      highlight: "Implemented real-time issue updates using MongoDB Change Streams with Next.js App Router.",
+      tags: ["Next.js", "Node.js", "MongoDB", "Express", "i18next"],
+      image: "https://picsum.photos/seed/fixmyarea/800/600",
+      live: "#",
+      github: "#",
     },
     {
-      title: "Admin Insight Pro",
-      category: "Next.js / Tailwind / Recharts",
-      image: PlaceHolderImages.find(img => img.id === "project2")?.imageUrl || "https://picsum.photos/seed/p2/800/600",
-      link: "#",
+      title: "AgroInsight",
+      description: "A crop-price and weather dashboard for farmers, integrating external APIs with caching for reliability.",
+      highlight: "Built with Next.js App Router for scalable rendering and optimized data fetching with server-side caching.",
+      tags: ["Next.js", "TypeScript", "Docker", "Chart.js"],
+      image: "https://picsum.photos/seed/agro/800/600",
+      live: "#",
+      github: "#",
     },
     {
-      title: "CollabSync Real-time",
-      category: "Socket.io / Node.js",
-      image: PlaceHolderImages.find(img => img.id === "project3")?.imageUrl || "https://picsum.photos/seed/p3/800/600",
-      link: "#",
+      title: "OpenDesk",
+      description: "A collaboration platform where developers can find real-world projects and contribute via GitHub pull requests.",
+      highlight: "Implemented secure project ownership and task-based collaboration using Clerk authentication.",
+      tags: ["Next.js", "Node.js", "MongoDB", "Clerk"],
+      image: "https://picsum.photos/seed/opendesk/800/600",
+      live: "#",
+      github: "#",
+    },
+    {
+      title: "AplyO",
+      description: "A frontend-based job application tracking tool using browser storage for data persistence.",
+      highlight: "Built with vanilla JavaScript and LocalStorage for offline-friendly job tracking.",
+      tags: ["HTML", "CSS", "JavaScript", "LocalStorage"],
+      image: "https://picsum.photos/seed/aplyo/800/600",
+      live: "#",
+      github: "#",
+    },
+    {
+      title: "Gym Website",
+      description: "A responsive, modern gym and fitness website with clean UI, mobile-first design, and performance optimization.",
+      highlight: "Built with modern web standards focusing on Core Web Vitals and mobile responsiveness.",
+      tags: ["React", "Tailwind CSS", "Framer Motion"],
+      image: "https://picsum.photos/seed/gym/800/600",
+      live: "#",
+      github: "#",
     },
   ];
 
@@ -37,38 +64,54 @@ export function Projects() {
             <h3 className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Portfolio</h3>
             <h2 className="text-3xl font-bold text-white font-headline">Featured Projects</h2>
           </div>
-          <a href="#" className="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors group">
+          <a href="https://github.com/Cwpranay" target="_blank" className="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors group font-bold">
             All Projects <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="space-y-12">
         {projects.map((project, i) => (
           <ScrollReveal key={i} delay={i * 0.1}>
-            <motion.div 
-              whileHover={{ y: -8, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="group relative bg-[#111113] border border-white/5 rounded-2xl overflow-hidden cursor-pointer shadow-xl hover:shadow-primary/10 transition-all duration-300"
-            >
-              <div className="aspect-[16/10] relative overflow-hidden">
+            <div className="group grid grid-cols-1 lg:grid-cols-[45%_1fr] gap-8 bg-[#111113] border border-white/5 rounded-3xl overflow-hidden shadow-2xl hover:border-primary/20 transition-all duration-500">
+              <div className="aspect-[16/10] lg:aspect-auto relative overflow-hidden bg-zinc-900">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  data-ai-hint="project screenshot"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <ExternalLink size={20} />
-                  </div>
+              </div>
+              <div className="p-8 lg:p-12 space-y-6 flex flex-col justify-center">
+                <div className="space-y-2">
+                  <h4 className="text-3xl font-bold text-white font-headline">{project.title}</h4>
+                  <p className="text-zinc-400 text-lg leading-relaxed">{project.description}</p>
+                </div>
+                
+                <div className="p-4 bg-white/5 border border-white/5 rounded-xl">
+                  <p className="text-sm font-bold text-primary uppercase tracking-widest mb-2">Technical Highlight</p>
+                  <p className="text-zinc-300 italic text-sm">"{project.highlight}"</p>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <Badge key={tag} variant="outline" className="border-white/10 text-zinc-400 bg-white/5">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+
+                <div className="flex items-center gap-4 pt-4">
+                  <a href={project.live} className="flex items-center gap-2 text-white font-bold bg-primary px-6 py-2.5 rounded-xl hover:brightness-110 transition-all">
+                    <ExternalLink size={18} /> Live Demo
+                  </a>
+                  <a href={project.github} className="flex items-center gap-2 text-white font-bold bg-white/5 border border-white/5 px-6 py-2.5 rounded-xl hover:bg-white/10 transition-all">
+                    <Github size={18} /> Source Code
+                  </a>
                 </div>
               </div>
-              <div className="p-8 space-y-2">
-                <p className="text-xs font-bold text-primary uppercase tracking-[0.2em]">{project.category}</p>
-                <h4 className="text-2xl font-bold text-white font-headline group-hover:text-primary transition-colors">{project.title}</h4>
-              </div>
-            </motion.div>
+            </div>
           </ScrollReveal>
         ))}
       </div>

@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   const stats = [
-    { label: "PROJECTS COMPLETED", value: "+15" },
-    { label: "TECH STACK", value: "MERN" },
-    { label: "EXPERIENCE", value: "2 Yrs" },
+    { label: "PROJECTS COMPLETED", value: "5+" },
+    { label: "TECHNOLOGIES", value: "10+" },
+    { label: "YEARS LEARNING", value: "2+" },
   ];
 
   const headline = "Transforming Your Ideas into Reality";
@@ -39,7 +39,7 @@ export function Hero() {
           </h2>
           <ScrollReveal delay={0.4}>
             <p className="text-lg md:text-xl text-zinc-400 max-w-xl leading-relaxed font-body">
-              Specializing in Next.js and the MERN stack. I build scalable, production-ready applications that focus on performance and clean architecture.
+              Specializing in Next.js and the MERN stack. I build scalable, production-ready applications focusing on clean architecture and modern best practices.
             </p>
           </ScrollReveal>
         </div>
@@ -57,17 +57,17 @@ export function Hero() {
 
         <ScrollReveal delay={0.8}>
           <div className="flex items-center gap-6">
-            <Button 
-              className="bg-primary hover:bg-primary/90 hover:brightness-110 text-white font-bold px-6 py-3 rounded-lg shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-all duration-300 hover:scale-[1.03] active:scale-95 text-base h-auto"
-            >
-              View My Projects
-            </Button>
-            <button 
-              className="group flex items-center gap-2 text-white font-bold transition-all duration-300 hover:text-primary text-base"
-            >
-              My Skills 
+            <a href="#projects">
+              <Button 
+                className="bg-primary hover:bg-primary/90 hover:brightness-110 text-white font-bold px-6 py-3 rounded-lg shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-all duration-300 hover:scale-[1.03] active:scale-95 text-base h-auto"
+              >
+                View Projects
+              </Button>
+            </a>
+            <a href="#contact" className="group flex items-center gap-2 text-white font-bold transition-all duration-300 hover:text-primary text-base">
+              Get In Touch 
               <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
+            </a>
           </div>
         </ScrollReveal>
       </div>
@@ -75,19 +75,16 @@ export function Hero() {
       <ScrollReveal delay={1.0} className="w-full">
         <div className="pt-16 border-t border-white/5 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="space-y-6">
-            <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Tech Stack Exposure</p>
+            <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Currently Working On</p>
             <div className="flex flex-wrap items-center gap-10 opacity-60">
                <div className="flex items-center gap-3 text-white font-bold text-xl">
-                 <span>MongoDB</span>
+                 <span>Full-Stack Projects</span>
                </div>
                <div className="flex items-center gap-3 text-white font-bold text-xl">
-                 <span>Express</span>
+                 <span>Building Production Apps</span>
                </div>
                <div className="flex items-center gap-3 text-white font-bold text-xl">
-                 <span>React</span>
-               </div>
-               <div className="flex items-center gap-3 text-white font-bold text-xl">
-                 <span>Node.js</span>
+                 <span>Learning AI/ML</span>
                </div>
             </div>
           </div>
