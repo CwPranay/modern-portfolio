@@ -17,7 +17,7 @@ export function Hero() {
   const words = headline.split(" ");
 
   return (
-    <section id="hero" className="min-h-[120vh] flex flex-col justify-start items-start space-y-16 pt-12 md:pt-20">
+    <section id="hero" className="min-h-[120vh] flex flex-col justify-start items-start space-y-16 pt-0">
       <div className="space-y-12 w-full text-left">
         <div className="space-y-6">
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold font-headline leading-[1.1] tracking-tight text-white flex flex-wrap">

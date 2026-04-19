@@ -19,16 +19,16 @@ export default function Home() {
 
       <main className="max-w-6xl mx-auto px-4 md:px-6">
         {/* 
-          Main Grid Layout:
-          - Uses items-start to ensure alignment from the top.
-          - The sticky aside uses an offset (top-[20vh]) and a starting margin (mt-24)
-            to create the "scroll up then stick" effect.
+          SINGLE GLOBAL GRID
+          - Ensures consistent horizontal alignment for the left profile card.
+          - md:grid-cols-[35%_65%] creates the 35/65 ratio requested.
+          - items-start ensures both columns align perfectly from the top.
         */}
-        <div className="grid grid-cols-1 md:grid-cols-[40%_60%] lg:grid-cols-[35%_65%] gap-10 md:gap-12 items-start pt-12 md:pt-20">
+        <div className="grid grid-cols-1 md:grid-cols-[35%_65%] gap-10 md:gap-12 items-start pt-12 md:pt-20">
           
-          {/* Left Column: Persistent Profile Card with Dynamic Sticky Behavior */}
-          <aside className="hidden md:block sticky top-[20vh] self-start w-full">
-            <div className="max-w-sm w-full mt-12 md:mt-24 transition-all duration-700">
+          {/* Left Column: Persistent Profile Card */}
+          <aside className="hidden md:block sticky top-24 self-start w-full">
+            <div className="max-w-sm w-full">
               <ProfileCard />
             </div>
           </aside>
