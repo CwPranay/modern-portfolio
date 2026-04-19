@@ -2,63 +2,81 @@
 "use client";
 
 import { ScrollReveal } from "./ScrollReveal";
-import { Code2, Database, Layout, Server, Shield, Terminal, Globe, Cpu } from "lucide-react";
+import { 
+  Globe, 
+  Code2, 
+  Shield, 
+  Wind, 
+  Server, 
+  Terminal, 
+  Database, 
+  Box, 
+  GitBranch, 
+  Coffee,
+  Cpu,
+  Binary
+} from "lucide-react";
 
 export function Tools() {
   const skillCategories = [
     {
       title: "Frontend",
       skills: [
-        { name: "Next.js", icon: Globe },
-        { name: "React", icon: Code2 },
-        { name: "TypeScript", icon: Shield },
-        { name: "Tailwind CSS", icon: Layout },
+        { name: "Next.js", subtitle: "React Framework", icon: Globe },
+        { name: "React", subtitle: "UI Library", icon: Code2 },
+        { name: "TypeScript", subtitle: "Type Safety", icon: Shield },
+        { name: "Tailwind CSS", subtitle: "Styling Engine", icon: Wind },
       ],
     },
     {
       title: "Backend",
       skills: [
-        { name: "Node.js", icon: Server },
-        { name: "Express", icon: Terminal },
-        { name: "MongoDB", icon: Database },
-        { name: "MySQL", icon: Database },
-        { name: " .NET", icon: Cpu },
+        { name: "Node.js", subtitle: "Runtime Environment", icon: Server },
+        { name: "Express", subtitle: "Backend Framework", icon: Terminal },
+        { name: "MongoDB", subtitle: "NoSQL Database", icon: Database },
+        { name: "MySQL", subtitle: "SQL Database", icon: Database },
+        { name: ".NET", subtitle: "Application Framework", icon: Cpu },
       ],
     },
     {
-      title: "DevOps & Tools",
+      title: "DevOps & Languages",
       skills: [
-        { name: "Docker", icon: Cpu },
-        { name: "Git", icon: Terminal },
-        { name: "Python", icon: Code2 },
-        { name: "Java", icon: Code2 },
+        { name: "Docker", subtitle: "Containerization", icon: Box },
+        { name: "Git", subtitle: "Version Control", icon: GitBranch },
+        { name: "Python", subtitle: "General Purpose", icon: Binary },
+        { name: "Java", subtitle: "Enterprise Language", icon: Coffee },
       ],
     },
   ];
 
   return (
-    <section id="tools" className="space-y-12 scroll-mt-20">
+    <section id="tools" className="space-y-16 scroll-mt-20">
       <ScrollReveal>
-        <div className="space-y-2">
-          <h3 className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Technical Stack</h3>
-          <h2 className="text-3xl font-bold text-white font-headline">My Skills</h2>
+        <div className="space-y-4">
+          <h2 className="text-5xl md:text-6xl font-bold text-white font-headline leading-tight tracking-tight">
+            Top-Tier Tools for <br />
+            Exceptional <span className="text-primary">Results</span>
+          </h2>
         </div>
       </ScrollReveal>
 
-      <div className="space-y-8">
+      <div className="space-y-12">
         {skillCategories.map((category, idx) => (
-          <div key={idx} className="space-y-4">
-            <h4 className="text-zinc-500 font-bold uppercase tracking-widest text-xs px-2">
+          <div key={idx} className="space-y-6">
+            <h4 className="text-zinc-500 font-bold uppercase tracking-widest text-[10px] px-2">
               {category.title}
             </h4>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {category.skills.map((skill, i) => (
                 <ScrollReveal key={i} delay={i * 0.05 + idx * 0.1}>
-                  <div className="flex flex-col items-center justify-center p-6 bg-card border border-white/5 rounded-2xl hover:border-primary/30 transition-all group text-center">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-3 group-hover:bg-primary/10 transition-colors">
-                      <skill.icon className="text-zinc-500 group-hover:text-primary transition-colors" size={24} />
+                  <div className="flex items-center gap-4 p-5 bg-[#161618] border border-white/5 rounded-2xl hover:border-primary/30 transition-all group">
+                    <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-lg group-hover:scale-105 transition-transform">
+                      <skill.icon className="text-black" size={24} />
                     </div>
-                    <h4 className="text-white font-bold text-sm">{skill.name}</h4>
+                    <div className="flex flex-col">
+                      <h4 className="text-white font-bold text-lg leading-tight">{skill.name}</h4>
+                      <p className="text-zinc-500 text-sm font-medium">{skill.subtitle}</p>
+                    </div>
                   </div>
                 </ScrollReveal>
               ))}
