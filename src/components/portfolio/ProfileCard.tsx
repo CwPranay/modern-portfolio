@@ -98,13 +98,6 @@ export function ProfileCard() {
           </Button>
         </a>
       </div>
-
-      <div className="pt-4 border-t border-white/5">
-        <div className="flex items-center justify-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Available for opportunities</span>
-        </div>
-      </div>
     </motion.div>
   );
 }
