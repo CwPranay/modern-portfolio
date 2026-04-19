@@ -13,14 +13,14 @@ export function Hero() {
   ];
 
   return (
-    <section id="hero" className="min-h-[120vh] flex flex-col justify-start items-start space-y-16 pt-12 md:pt-24">
-      <div className="space-y-12 w-full">
+    <section id="hero" className="min-h-[110vh] flex flex-col justify-start items-start space-y-16 pt-12 md:pt-24">
+      <div className="space-y-12 w-full text-left">
         <ScrollReveal>
           <div className="space-y-6">
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold font-headline leading-[1.1] tracking-tight text-white text-left">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold font-headline leading-[1.1] tracking-tight text-white">
               Transforming Your Ideas into <span className="text-primary italic">Reality</span>
             </h2>
-            <p className="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed font-body text-left">
+            <p className="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed font-body">
               Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.
             </p>
           </div>
@@ -29,7 +29,7 @@ export function Hero() {
         <ScrollReveal delay={0.1}>
           <div className="flex flex-wrap gap-8 md:gap-16">
             {stats.map((stat, i) => (
-              <div key={i} className="space-y-1 text-left">
+              <div key={i} className="space-y-1">
                 <div className="text-4xl md:text-6xl font-bold text-white font-headline">{stat.value}</div>
                 <div className="text-[10px] md:text-xs text-zinc-500 font-bold uppercase tracking-[0.2em]">{stat.label}</div>
               </div>
@@ -57,7 +57,7 @@ export function Hero() {
       <ScrollReveal delay={0.3} className="w-full">
         <div className="pt-16 border-t border-white/5 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="space-y-6">
-            <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Relied on by companies near, far, and worldwide</p>
+            <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Relied on by companies worldwide</p>
             <div className="flex flex-wrap items-center gap-10 opacity-60">
                <div className="flex items-center gap-3 text-white font-bold text-xl">
                  <div className="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center text-[10px]">L</div> 

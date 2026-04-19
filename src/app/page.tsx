@@ -21,13 +21,13 @@ export default function Home() {
         {/* 
           Main Grid Layout:
           - Uses items-start to ensure alignment from the top.
-          - The sticky aside uses an offset (top-[15vh]) and a starting margin (mt-32)
+          - The sticky aside uses an offset (top-[20vh]) and a starting margin (mt-24)
             to create the "scroll up then stick" effect.
         */}
         <div className="grid grid-cols-1 md:grid-cols-[40%_60%] lg:grid-cols-[35%_65%] gap-10 md:gap-12 items-start pt-12 md:pt-20">
           
           {/* Left Column: Persistent Profile Card with Dynamic Sticky Behavior */}
-          <aside className="hidden md:block sticky top-[15vh] self-start w-full">
+          <aside className="hidden md:block sticky top-[20vh] self-start w-full">
             <div className="max-w-sm w-full mt-12 md:mt-24 transition-all duration-700">
               <ProfileCard />
             </div>
