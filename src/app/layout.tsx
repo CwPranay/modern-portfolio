@@ -1,6 +1,8 @@
 
 import type { Metadata } from 'next';
 import './globals.css';
+import { SmoothScroll } from '@/components/portfolio/SmoothScroll';
+import { CursorGlow } from '@/components/portfolio/CursorGlow';
 
 export const metadata: Metadata = {
   title: 'Alex Rivera | Senior Product Designer',
@@ -19,8 +21,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased bg-background text-foreground">
-        {children}
+      <body className="font-body antialiased bg-background text-foreground overflow-x-hidden">
+        <SmoothScroll>
+          <CursorGlow />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

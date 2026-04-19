@@ -4,6 +4,7 @@
 import { ScrollReveal } from "./ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Hero() {
   const stats = [
@@ -12,21 +13,38 @@ export function Hero() {
     { label: "WORLDWIDE CLIENTS", value: "+20" },
   ];
 
+  const headline = "Transforming Your Ideas into Reality";
+  const words = headline.split(" ");
+
   return (
-    <section id="hero" className="min-h-[110vh] flex flex-col justify-start items-start space-y-16 pt-12 md:pt-24">
+    <section id="hero" className="min-h-[120vh] flex flex-col justify-start items-start space-y-16 pt-12 md:pt-20">
       <div className="space-y-12 w-full text-left">
-        <ScrollReveal>
-          <div className="space-y-6">
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold font-headline leading-[1.1] tracking-tight text-white">
-              Transforming Your Ideas into <span className="text-primary italic">Reality</span>
-            </h2>
+        <div className="space-y-6">
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold font-headline leading-[1.1] tracking-tight text-white flex flex-wrap">
+            {words.map((word, i) => (
+              <motion.span
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: i * 0.08,
+                  ease: "easeOut",
+                }}
+                className={`mr-4 ${word === "Reality" ? "text-primary italic" : ""}`}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </h2>
+          <ScrollReveal delay={0.4}>
             <p className="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed font-body">
               Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.
             </p>
-          </div>
-        </ScrollReveal>
+          </ScrollReveal>
+        </div>
 
-        <ScrollReveal delay={0.1}>
+        <ScrollReveal delay={0.6}>
           <div className="flex flex-wrap gap-8 md:gap-16">
             {stats.map((stat, i) => (
               <div key={i} className="space-y-1">
@@ -37,15 +55,15 @@ export function Hero() {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={0.2}>
+        <ScrollReveal delay={0.8}>
           <div className="flex items-center gap-6">
             <Button 
-              className="bg-[#7C3AED] hover:bg-[#7C3AED]/90 hover:brightness-110 text-white font-bold px-5 py-2.5 rounded-lg shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-all duration-300 hover:scale-[1.03] active:scale-95 text-base h-auto"
+              className="bg-primary hover:bg-primary/90 hover:brightness-110 text-white font-bold px-5 py-2.5 rounded-lg shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-all duration-300 hover:scale-[1.03] active:scale-95 text-base h-auto"
             >
               Let's Talk
             </Button>
             <button 
-              className="group flex items-center gap-2 text-white font-bold transition-all duration-300 hover:text-[#7C3AED] text-base"
+              className="group flex items-center gap-2 text-white font-bold transition-all duration-300 hover:text-primary text-base"
             >
               My Work 
               <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -54,7 +72,7 @@ export function Hero() {
         </ScrollReveal>
       </div>
 
-      <ScrollReveal delay={0.3} className="w-full">
+      <ScrollReveal delay={1.0} className="w-full">
         <div className="pt-16 border-t border-white/5 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="space-y-6">
             <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Relied on by companies worldwide</p>
@@ -71,7 +89,7 @@ export function Hero() {
           </div>
           
           <div className="flex items-center gap-3">
-             <Button size="sm" className="bg-[#7C3AED] hover:bg-[#7C3AED]/90 rounded-md text-xs px-4 h-9 font-bold shadow-lg shadow-primary/20">
+             <Button size="sm" className="bg-primary hover:bg-primary/90 rounded-md text-xs px-4 h-9 font-bold shadow-lg shadow-primary/20">
                Use Template for Free
              </Button>
              <Button size="sm" variant="secondary" className="bg-white text-black hover:bg-white/90 rounded-md text-xs px-4 h-9 font-bold">

@@ -1,17 +1,60 @@
 
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Twitter, Mail, Download, Globe } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Globe } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 export function ProfileCard() {
   const avatar = PlaceHolderImages.find((img) => img.id === "avatar");
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["6deg", "-6deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-6deg", "6deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
 
   return (
-    <div className="bg-[#111113] rounded-2xl p-6 border border-white/5 space-y-6 shadow-2xl">
-      <div className="relative w-full aspect-square rounded-xl overflow-hidden mb-6 bg-zinc-900">
+    <motion.div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: "preserve-3d",
+      }}
+      className="bg-[#111113] rounded-2xl p-6 border border-white/5 space-y-6 shadow-2xl transition-all duration-300"
+    >
+      <div 
+        className="relative w-full aspect-square rounded-xl overflow-hidden mb-6 bg-zinc-900"
+        style={{ transform: "translateZ(50px)" }}
+      >
         <Image
           src={avatar?.imageUrl || "https://picsum.photos/seed/folioprofile/400/400"}
           alt="Profile"
@@ -21,7 +64,7 @@ export function ProfileCard() {
         />
       </div>
       
-      <div className="space-y-2 text-center">
+      <div className="space-y-2 text-center" style={{ transform: "translateZ(30px)" }}>
         <h1 className="text-3xl font-bold font-headline text-white">Alex Rivera</h1>
         <div className="space-y-1">
           <p className="text-zinc-400 font-medium">Senior Product Designer & Developer</p>
@@ -29,7 +72,7 @@ export function ProfileCard() {
         </div>
       </div>
 
-      <div className="flex justify-center gap-3">
+      <div className="flex justify-center gap-3" style={{ transform: "translateZ(20px)" }}>
         {[
           { icon: Globe, href: "#" },
           { icon: Twitter, href: "#" },
@@ -46,8 +89,8 @@ export function ProfileCard() {
         ))}
       </div>
 
-      <div className="pt-2">
-        <Button className="w-full h-12 rounded-xl text-base font-bold shadow-[0_0_20px_rgba(124,58,237,0.3)] hover-scale bg-primary hover:bg-primary/90 transition-all duration-300">
+      <div className="pt-2" style={{ transform: "translateZ(40px)" }}>
+        <Button className="w-full h-12 rounded-xl text-base font-bold shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:scale-[1.03] active:scale-[0.98] bg-primary hover:bg-primary/90 transition-all duration-300">
           Let's Talk
         </Button>
       </div>
@@ -58,6 +101,6 @@ export function ProfileCard() {
           <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Available for projects</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

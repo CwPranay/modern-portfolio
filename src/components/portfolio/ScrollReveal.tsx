@@ -17,21 +17,13 @@ export function ScrollReveal({ children, delay = 0, className = "" }: ScrollReve
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{
-        duration: 0.6,
-        ease: "easeOut",
+        duration: 0.8,
+        ease: [0.25, 1, 0.5, 1], // Custom cubic-bezier for smoother feel
         delay: delay,
       }}
       className={className}
     >
       {children}
     </motion.div>
-  );
-}
-
-export function StaggerContainer({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return (
-    <div className={className}>
-      {children}
-    </div>
   );
 }
