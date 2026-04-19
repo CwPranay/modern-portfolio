@@ -7,12 +7,16 @@ import { Testimonials } from "@/components/portfolio/Testimonials";
 import { Contact } from "@/components/portfolio/Contact";
 import { AiSuggestionTool } from "@/components/portfolio/AiSuggestionTool";
 import { Toaster } from "@/components/ui/toaster";
+import { Navbar } from "@/components/portfolio/Navbar";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Floating Navigation */}
+      <Navbar />
+
       {/* Root Container */}
-      <div className="max-w-7xl mx-auto px-6 py-12 lg:py-20">
+      <div className="max-w-7xl mx-auto px-6 py-24 lg:py-32">
         <div className="grid grid-cols-1 md:grid-cols-[40%_60%] lg:grid-cols-[35%_65%] gap-12 lg:gap-24">
           
           {/* Left Side: Sticky Profile Card */}
