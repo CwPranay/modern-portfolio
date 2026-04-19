@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   const stats = [
-    { label: "YEARS OF EXPERIENCE", value: "+12" },
-    { label: "PROJECTS COMPLETED", value: "+46" },
-    { label: "WORLDWIDE CLIENTS", value: "+20" },
+    { label: "PROJECTS COMPLETED", value: "+15" },
+    { label: "TECH STACK", value: "MERN" },
+    { label: "EXPERIENCE", value: "2 Yrs" },
   ];
 
   const headline = "Transforming Your Ideas into Reality";
@@ -20,7 +20,7 @@ export function Hero() {
     <section id="hero" className="min-h-[120vh] flex flex-col justify-start items-start space-y-16 pt-0">
       <div className="space-y-12 w-full text-left">
         <div className="space-y-6">
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold font-headline leading-[1.1] tracking-tight text-white flex flex-wrap">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold font-headline leading-[1.1] tracking-tight text-white flex flex-wrap">
             {words.map((word, i) => (
               <motion.span
                 key={i}
@@ -31,15 +31,15 @@ export function Hero() {
                   delay: i * 0.08,
                   ease: "easeOut",
                 }}
-                className={`mr-4 ${word === "Reality" ? "text-primary italic" : ""}`}
+                className={`mr-3 ${word === "Reality" ? "text-primary italic" : ""}`}
               >
                 {word}
               </motion.span>
             ))}
           </h2>
           <ScrollReveal delay={0.4}>
-            <p className="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed font-body">
-              Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.
+            <p className="text-lg md:text-xl text-zinc-400 max-w-xl leading-relaxed font-body">
+              Specializing in Next.js and the MERN stack. I build scalable, production-ready applications that focus on performance and clean architecture.
             </p>
           </ScrollReveal>
         </div>
@@ -48,7 +48,7 @@ export function Hero() {
           <div className="flex flex-wrap gap-8 md:gap-16">
             {stats.map((stat, i) => (
               <div key={i} className="space-y-1">
-                <div className="text-4xl md:text-6xl font-bold text-white font-headline">{stat.value}</div>
+                <div className="text-4xl md:text-5xl font-bold text-white font-headline">{stat.value}</div>
                 <div className="text-[10px] md:text-xs text-zinc-500 font-bold uppercase tracking-[0.2em]">{stat.label}</div>
               </div>
             ))}
@@ -58,14 +58,14 @@ export function Hero() {
         <ScrollReveal delay={0.8}>
           <div className="flex items-center gap-6">
             <Button 
-              className="bg-primary hover:bg-primary/90 hover:brightness-110 text-white font-bold px-5 py-2.5 rounded-lg shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-all duration-300 hover:scale-[1.03] active:scale-95 text-base h-auto"
+              className="bg-primary hover:bg-primary/90 hover:brightness-110 text-white font-bold px-6 py-3 rounded-lg shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-all duration-300 hover:scale-[1.03] active:scale-95 text-base h-auto"
             >
-              Let's Talk
+              View My Projects
             </Button>
             <button 
               className="group flex items-center gap-2 text-white font-bold transition-all duration-300 hover:text-primary text-base"
             >
-              My Work 
+              My Skills 
               <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
             </button>
           </div>
@@ -75,15 +75,19 @@ export function Hero() {
       <ScrollReveal delay={1.0} className="w-full">
         <div className="pt-16 border-t border-white/5 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="space-y-6">
-            <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Relied on by companies worldwide</p>
+            <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Tech Stack Exposure</p>
             <div className="flex flex-wrap items-center gap-10 opacity-60">
                <div className="flex items-center gap-3 text-white font-bold text-xl">
-                 <div className="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center text-[10px]">L</div> 
-                 <span>Logoipsum</span>
+                 <span>MongoDB</span>
                </div>
                <div className="flex items-center gap-3 text-white font-bold text-xl">
-                 <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center text-[10px]">L</div> 
-                 <span>Logoipsum</span>
+                 <span>Express</span>
+               </div>
+               <div className="flex items-center gap-3 text-white font-bold text-xl">
+                 <span>React</span>
+               </div>
+               <div className="flex items-center gap-3 text-white font-bold text-xl">
+                 <span>Node.js</span>
                </div>
             </div>
           </div>

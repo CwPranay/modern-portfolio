@@ -15,8 +15,8 @@ export function ProfileCard() {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
+  const mouseXSpring = useSpring(x, { damping: 40, stiffness: 200 });
+  const mouseYSpring = useSpring(y, { damping: 40, stiffness: 200 });
 
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["6deg", "-6deg"]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-6deg", "6deg"]);
@@ -56,32 +56,34 @@ export function ProfileCard() {
         style={{ transform: "translateZ(50px)" }}
       >
         <Image
-          src={avatar?.imageUrl || "https://picsum.photos/seed/folioprofile/400/400"}
-          alt="Profile"
+          src={avatar?.imageUrl || "https://picsum.photos/seed/pranay/400/400"}
+          alt="Pranay Gurav"
           fill
           className="object-cover"
-          data-ai-hint="professional profile"
+          data-ai-hint="developer portrait"
         />
       </div>
       
       <div className="space-y-2 text-center" style={{ transform: "translateZ(30px)" }}>
-        <h1 className="text-3xl font-bold font-headline text-white">Alex Rivera</h1>
+        <h1 className="text-3xl font-bold font-headline text-white">Pranay Gurav</h1>
         <div className="space-y-1">
-          <p className="text-zinc-400 font-medium">Senior Product Designer & Developer</p>
-          <p className="text-zinc-500 text-sm">New York, NY</p>
+          <p className="text-zinc-400 font-medium">MERN Stack Developer</p>
+          <p className="text-zinc-500 text-sm">Mumbai, India</p>
         </div>
       </div>
 
       <div className="flex justify-center gap-3" style={{ transform: "translateZ(20px)" }}>
         {[
-          { icon: Globe, href: "#" },
-          { icon: Twitter, href: "#" },
-          { icon: Linkedin, href: "#" },
-          { icon: Mail, href: "#" },
+          { icon: Github, href: "https://github.com" },
+          { icon: Linkedin, href: "https://linkedin.com" },
+          { icon: Twitter, href: "https://twitter.com" },
+          { icon: Mail, href: "mailto:hello@pranay.dev" },
         ].map((social, i) => (
           <a
             key={i}
             href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="p-2.5 rounded-lg bg-white/5 border border-white/5 hover:bg-primary/20 hover:border-primary/50 transition-all text-zinc-400 hover:text-white"
           >
             <social.icon size={18} />
@@ -98,7 +100,7 @@ export function ProfileCard() {
       <div className="pt-4 border-t border-white/5">
         <div className="flex items-center justify-center gap-2">
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Available for projects</span>
+          <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Available for hire</span>
         </div>
       </div>
     </motion.div>

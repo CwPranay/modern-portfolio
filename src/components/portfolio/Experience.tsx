@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ScrollReveal } from "./ScrollReveal";
@@ -5,22 +6,16 @@ import { ScrollReveal } from "./ScrollReveal";
 export function Experience() {
   const experiences = [
     {
-      company: "Logoipsum Tech",
-      role: "Senior Product Designer",
-      period: "2021 — Present",
-      description: "Leading the design system team and overseeing the UX strategy for core fintech products.",
+      company: "Freelance",
+      role: "Full-stack Developer",
+      period: "2023 — Present",
+      description: "Developing custom web solutions for local startups, focusing on MERN stack and Next.js integrations.",
     },
     {
-      company: "Nexus Creative",
-      role: "Lead Developer & Designer",
-      period: "2018 — 2021",
-      description: "Developed high-performance web applications and managed a team of 5 junior designers.",
-    },
-    {
-      company: "Vivid Studios",
-      role: "UI Designer",
-      period: "2015 — 2018",
-      description: "Focused on mobile-first interfaces and interactive prototypes for global retail brands.",
+      company: "TechNova Solutions",
+      role: "MERN Stack Developer (Intern)",
+      period: "2022 — 2023",
+      description: "Contributed to building reusable UI components and optimizing REST APIs for client-facing dashboards.",
     },
   ];
 
@@ -28,7 +23,7 @@ export function Experience() {
     <section id="experience" className="space-y-12 scroll-mt-20">
       <ScrollReveal>
         <div className="space-y-2">
-          <h3 className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Resume</h3>
+          <h3 className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Career</h3>
           <h2 className="text-3xl md:text-4xl font-bold text-white font-headline">Experience</h2>
         </div>
       </ScrollReveal>

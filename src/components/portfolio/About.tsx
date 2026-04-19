@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ScrollReveal } from "./ScrollReveal";
@@ -13,34 +14,34 @@ export function About() {
       </ScrollReveal>
 
       <ScrollReveal delay={0.1}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-6 text-zinc-400 text-lg leading-relaxed">
             <p>
-              I am a Senior Product Designer and Developer based in New York. With over 12 years of experience, I specialize in building digital products that combine aesthetic beauty with technical excellence.
+              I'm Pranay Gurav, a Full-stack Developer based in Mumbai. I focus on building real-world applications using the MERN stack and Next.js, with a strong emphasis on clean code and user-centric design.
             </p>
             <p>
-              My approach is user-centric and data-driven. I believe that great design is not just how it looks, but how it works and solves real problems for people.
+              My goal is to bridge the gap between complex backend logic and intuitive frontend experiences. Whether it's crafting scalable APIs or building interactive dashboards, I strive for excellence in every line of code.
             </p>
           </div>
           <div className="space-y-6">
             <div className="p-6 bg-card border border-white/5 rounded-2xl space-y-4">
-              <h4 className="text-white font-bold">What I do</h4>
-              <ul className="space-y-3 text-zinc-400 text-sm">
+              <h4 className="text-white font-bold">Key Areas of Focus</h4>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-zinc-400 text-sm">
                 <li className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  UI/UX Design & Prototyping
+                  Full-stack MERN Development
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  Full-stack Development (React/Next.js)
+                  Next.js & Server Components
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  Product Strategy & Vision
+                  REST & GraphQL APIs
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  Motion Design & Interactions
+                  Database Optimization
                 </li>
               </ul>
             </div>

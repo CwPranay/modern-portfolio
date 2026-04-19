@@ -14,14 +14,13 @@ import { Navbar } from "@/components/portfolio/Navbar";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background relative selection:bg-primary/30 selection:text-white">
-      {/* Floating Navigation Bar */}
       <Navbar />
 
       <main className="max-w-6xl mx-auto px-4 md:px-6">
         {/* 
           SINGLE GLOBAL GRID
-          - Ensures consistent horizontal alignment for the left profile card.
-          - md:grid-cols-[35%_65%] creates the 35/65 ratio requested.
+          - Ensures perfect horizontal stability across the entire experience.
+          - md:grid-cols-[35%_65%] creates the requested column ratio.
           - items-start ensures both columns align perfectly from the top.
         */}
         <div className="grid grid-cols-1 md:grid-cols-[35%_65%] gap-10 md:gap-12 items-start pt-12 md:pt-20">
@@ -41,10 +40,12 @@ export default function Home() {
             </div>
 
             <Hero />
-            <About />
-            <Experience />
+            <div className="pt-0">
+               <About />
+            </div>
             <Projects />
             <Tools />
+            <Experience />
             <Contact />
           </div>
         </div>
