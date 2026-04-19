@@ -5,16 +5,17 @@ import { ScrollReveal } from "./ScrollReveal";
 import { 
   Globe, 
   Code2, 
-  Shield, 
+  ShieldCheck, 
   Wind, 
   Server, 
   Terminal, 
   Database, 
-  Box, 
+  Package, 
   GitBranch, 
   Coffee,
   Cpu,
-  Binary
+  Binary,
+  Table2
 } from "lucide-react";
 
 export function Tools() {
@@ -24,7 +25,7 @@ export function Tools() {
       skills: [
         { name: "Next.js", subtitle: "React Framework", icon: Globe },
         { name: "React", subtitle: "UI Library", icon: Code2 },
-        { name: "TypeScript", subtitle: "Type Safety", icon: Shield },
+        { name: "TypeScript", subtitle: "Type Safety", icon: ShieldCheck },
         { name: "Tailwind CSS", subtitle: "Styling Engine", icon: Wind },
       ],
     },
@@ -34,14 +35,14 @@ export function Tools() {
         { name: "Node.js", subtitle: "Runtime Environment", icon: Server },
         { name: "Express", subtitle: "Backend Framework", icon: Terminal },
         { name: "MongoDB", subtitle: "NoSQL Database", icon: Database },
-        { name: "MySQL", subtitle: "SQL Database", icon: Database },
+        { name: "MySQL", subtitle: "SQL Database", icon: Table2 },
         { name: ".NET", subtitle: "Application Framework", icon: Cpu },
       ],
     },
     {
       title: "DevOps & Languages",
       skills: [
-        { name: "Docker", subtitle: "Containerization", icon: Box },
+        { name: "Docker", subtitle: "Containerization", icon: Package },
         { name: "Git", subtitle: "Version Control", icon: GitBranch },
         { name: "Python", subtitle: "General Purpose", icon: Binary },
         { name: "Java", subtitle: "Enterprise Language", icon: Coffee },
