@@ -1,0 +1,29 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "avatar",
+      "description": "Professional profile avatar",
+      "imageUrl": "https://picsum.photos/seed/folioprofile/400/400",
+      "imageHint": "professional man"
+    },
+    {
+      "id": "project1",
+      "description": "Fintech dashboard project",
+      "imageUrl": "https://picsum.photos/seed/project1/800/600",
+      "imageHint": "dashboard software"
+    },
+    {
+      "id": "project2",
+      "description": "E-commerce mobile app",
+      "imageUrl": "https://picsum.photos/seed/project2/800/600",
+      "imageHint": "mobile app"
+    },
+    {
+      "id": "project3",
+      "description": "AI-powered analytics tool",
+      "imageUrl": "https://picsum.photos/seed/project3/800/600",
+      "imageHint": "ai data"
+    }
+  ]
+}
