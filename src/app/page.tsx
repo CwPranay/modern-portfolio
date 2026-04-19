@@ -20,16 +20,15 @@ export default function Home() {
       <main className="max-w-6xl mx-auto px-4 md:px-6">
         {/* 
           Main Grid Layout:
-          - Uses a single persistent grid for the entire page.
-          - Left column contains the sticky ProfileCard.
-          - Right column contains the scrolling content stream.
-          - items-start ensures both columns start at the same vertical line.
+          - Uses items-start to ensure alignment from the top.
+          - The sticky aside uses an offset (top-[15vh]) and a starting margin (mt-32)
+            to create the "scroll up then stick" effect.
         */}
         <div className="grid grid-cols-1 md:grid-cols-[40%_60%] lg:grid-cols-[35%_65%] gap-10 md:gap-12 items-start pt-12 md:pt-20">
           
-          {/* Left Column: Persistent Profile Card */}
-          <aside className="hidden md:block sticky top-24 self-start w-full">
-            <div className="max-w-sm w-full">
+          {/* Left Column: Persistent Profile Card with Dynamic Sticky Behavior */}
+          <aside className="hidden md:block sticky top-[15vh] self-start w-full">
+            <div className="max-w-sm w-full mt-12 md:mt-24 transition-all duration-700">
               <ProfileCard />
             </div>
           </aside>

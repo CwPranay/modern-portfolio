@@ -13,10 +13,10 @@ export function Hero() {
   ];
 
   return (
-    <section id="hero" className="min-h-[120vh] flex flex-col justify-start items-start space-y-16">
+    <section id="hero" className="min-h-[120vh] flex flex-col justify-start items-start space-y-16 pt-12 md:pt-24">
       <div className="space-y-12 w-full">
         <ScrollReveal>
-          <div className="space-y-6 pt-2 md:pt-4">
+          <div className="space-y-6">
             <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold font-headline leading-[1.1] tracking-tight text-white text-left">
               Transforming Your Ideas into <span className="text-primary italic">Reality</span>
             </h2>
