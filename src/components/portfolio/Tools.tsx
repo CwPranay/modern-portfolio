@@ -3,49 +3,49 @@
 
 import { ScrollReveal } from "./ScrollReveal";
 import { 
-  Globe, 
-  Code2, 
-  ShieldCheck, 
-  Wind, 
-  Server, 
-  Terminal, 
-  Database, 
-  Package, 
-  GitBranch, 
-  Coffee,
-  Cpu,
-  Binary,
-  Table2
-} from "lucide-react";
+  SiNextdotjs, 
+  SiReact, 
+  SiTypescript, 
+  SiTailwindcss, 
+  SiNodedotjs, 
+  SiExpress, 
+  SiMongodb, 
+  SiMysql, 
+  SiDotnet, 
+  SiDocker, 
+  SiGit, 
+  SiPython 
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 
 export function Tools() {
   const skillCategories = [
     {
       title: "Frontend",
       skills: [
-        { name: "Next.js", subtitle: "React Framework", icon: Globe },
-        { name: "React", subtitle: "UI Library", icon: Code2 },
-        { name: "TypeScript", subtitle: "Type Safety", icon: ShieldCheck },
-        { name: "Tailwind CSS", subtitle: "Styling Engine", icon: Wind },
+        { name: "Next.js", subtitle: "React Framework", icon: SiNextdotjs },
+        { name: "React", subtitle: "UI Library", icon: SiReact },
+        { name: "TypeScript", subtitle: "Type Safety", icon: SiTypescript },
+        { name: "Tailwind CSS", subtitle: "Styling Engine", icon: SiTailwindcss },
       ],
     },
     {
       title: "Backend",
       skills: [
-        { name: "Node.js", subtitle: "Runtime Environment", icon: Server },
-        { name: "Express", subtitle: "Backend Framework", icon: Terminal },
-        { name: "MongoDB", subtitle: "NoSQL Database", icon: Database },
-        { name: "MySQL", subtitle: "SQL Database", icon: Table2 },
-        { name: ".NET", subtitle: "Application Framework", icon: Cpu },
+        { name: "Node.js", subtitle: "Runtime Environment", icon: SiNodedotjs },
+        { name: "Express", subtitle: "Backend Framework", icon: SiExpress },
+        { name: "MongoDB", subtitle: "NoSQL Database", icon: SiMongodb },
+        { name: "MySQL", subtitle: "SQL Database", icon: SiMysql },
+        { name: ".NET", subtitle: "Application Framework", icon: SiDotnet },
       ],
     },
     {
       title: "DevOps & Languages",
       skills: [
-        { name: "Docker", subtitle: "Containerization", icon: Package },
-        { name: "Git", subtitle: "Version Control", icon: GitBranch },
-        { name: "Python", subtitle: "General Purpose", icon: Binary },
-        { name: "Java", subtitle: "Enterprise Language", icon: Coffee },
+        { name: "Docker", subtitle: "Containerization", icon: SiDocker },
+        { name: "Git", subtitle: "Version Control", icon: SiGit },
+        { name: "Python", subtitle: "General Purpose", icon: SiPython },
+        { name: "Java", subtitle: "Enterprise Language", icon: FaJava },
       ],
     },
   ];
