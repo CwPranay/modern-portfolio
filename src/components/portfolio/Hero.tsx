@@ -1,4 +1,6 @@
 
+"use client";
+
 import { ScrollReveal } from "./ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -11,14 +13,14 @@ export function Hero() {
   ];
 
   return (
-    <section className="min-h-[110vh] flex flex-col justify-center space-y-16">
+    <section className="min-h-screen pt-10 md:pt-16 flex flex-col justify-start space-y-16">
       <div className="space-y-12">
         <ScrollReveal>
           <div className="space-y-6">
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold font-headline leading-[1.1] tracking-tight text-white">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold font-headline leading-[1.1] tracking-tight text-white text-left">
               Transforming Your Ideas into <span className="text-primary italic">Reality</span>
             </h2>
-            <p className="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed font-body">
+            <p className="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed font-body text-left">
               Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.
             </p>
           </div>

@@ -14,30 +14,30 @@ import { Navbar } from "@/components/portfolio/Navbar";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background relative selection:bg-primary/30 selection:text-white">
-      {/* Floating Navigation */}
+      {/* Floating Navigation Bar */}
       <Navbar />
 
       {/* Root Container */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-[35%_65%] gap-12 lg:gap-20 items-start">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-[35%_65%] gap-8 md:gap-12 items-start">
           
-          {/* Left Side: Pure CSS Sticky Profile Card */}
-          <aside className="md:pt-[25vh] h-full relative">
-            <div className="sticky top-24">
+          {/* Left Side: Profile Card - Perfectly Aligned Top */}
+          <aside className="pt-10 md:pt-16 md:sticky md:top-24 self-start w-full">
+            <div className="max-w-sm w-full mx-auto md:mx-0">
               <ProfileCard />
             </div>
           </aside>
 
-          {/* Right Side: Scrollable Content */}
-          <main className="space-y-32 pb-32">
+          {/* Right Side: Main Content Stream */}
+          <main className="flex flex-col space-y-32 pb-32 w-full overflow-hidden">
             <Hero />
             
-            <section className="space-y-32">
+            <div className="space-y-32">
               <About />
               <Experience />
               <Projects />
               <Tools />
-            </section>
+            </div>
 
             <Contact />
           </main>
