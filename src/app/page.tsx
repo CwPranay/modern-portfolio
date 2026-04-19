@@ -22,27 +22,21 @@ export default function Home() {
           - Ensures perfect horizontal stability across the entire experience.
           - md:grid-cols-[35%_65%] creates the requested column ratio.
           - items-start ensures both columns align perfectly from the top.
+          - Left column stretches to match right column height for sticky to work
         */}
-        <div className="grid grid-cols-1 md:grid-cols-[35%_65%] gap-10 md:gap-12 items-start pt-12 md:pt-20">
+        <div className="grid grid-cols-1 md:grid-cols-[35%_65%] gap-10 md:gap-12 items-start pt-24 md:pt-20">
           
-          {/* Left Column: Persistent Profile Card */}
-          <aside className="hidden md:block sticky top-24 self-start w-full">
-            <div className="max-w-sm w-full">
+          {/* Left Column: Profile Card with Sticky Behavior */}
+          <aside className="hidden md:block relative h-full pt-14">
+            <div className="sticky top-12 max-w-sm w-full">
               <ProfileCard />
             </div>
           </aside>
 
           {/* Right Column: Content Stream */}
-          <div className="flex flex-col space-y-24 md:space-y-32 pb-32 w-full overflow-hidden">
-            {/* Mobile-only Profile Card (Visible only when stacked) */}
-            <div className="md:hidden mb-8">
-              <ProfileCard />
-            </div>
-
+          <div className="flex flex-col space-y-24 md:space-y-32 pb-32 w-full">
             <Hero />
-            <div className="pt-0">
-               <About />
-            </div>
+            <About />
             <Projects />
             <Tools />
             <Experience />

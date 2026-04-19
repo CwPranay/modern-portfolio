@@ -6,6 +6,9 @@ import { CursorGlow } from '@/components/portfolio/CursorGlow';
 export const metadata: Metadata = {
   title: 'Pranay Gurav | MERN Stack Developer',
   description: 'Portfolio of Pranay Gurav, focused on digital experiences and high-performance MERN development.',
+  icons: {
+    icon: '/PG.svg',
+  },
 };
 
 export default function RootLayout({
