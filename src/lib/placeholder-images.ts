@@ -9,7 +9,7 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
   {
     id: "avatar",
     description: "Profile avatar image",
-    imageUrl: "/image.jpeg",
+    imageUrl: "/image.webp",
     imageHint: "professional developer portrait"
   },
   {
