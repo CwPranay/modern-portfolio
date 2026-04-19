@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -99,7 +98,7 @@ export function AiSuggestionTool() {
                   {copied ? "Copied" : "Copy"}
                 </Button>
               </div>
-              <p className="text-zinc-300 leading-relaxed italic">"{result}"</p>
+              <p className="text-zinc-300 leading-relaxed">"{result}"</p>
             </div>
           )}
         </div>

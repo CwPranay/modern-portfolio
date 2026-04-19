@@ -1,4 +1,3 @@
-
 "use client";
 
 import { ScrollReveal } from "./ScrollReveal";
@@ -17,7 +16,7 @@ export function Hero() {
   const words = headline.split(" ");
 
   return (
-    <section id="hero" className="min-h-[120vh] flex flex-col justify-start items-start space-y-16 pt-0">
+    <section id="hero" className="flex flex-col justify-start items-start space-y-16 pt-12 md:pt-20">
       <div className="space-y-12 w-full text-left">
         <div className="space-y-6">
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold font-headline leading-[1.1] tracking-tight text-white flex flex-wrap">
@@ -31,7 +30,7 @@ export function Hero() {
                   delay: i * 0.08,
                   ease: "easeOut",
                 }}
-                className={`mr-3 ${word === "Reality" ? "text-primary italic" : ""}`}
+                className={`mr-3 ${word === "Reality" ? "text-primary" : ""}`}
               >
                 {word}
               </motion.span>
@@ -85,6 +84,9 @@ export function Hero() {
                </div>
                <div className="flex items-center gap-3 text-white font-bold text-xl">
                  <span>Learning AI/ML</span>
+               </div>
+               <div className="flex items-center gap-3 text-white font-bold text-xl">
+                 <span>Exploring Tech</span>
                </div>
             </div>
           </div>

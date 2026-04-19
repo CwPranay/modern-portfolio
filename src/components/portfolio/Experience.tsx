@@ -1,4 +1,3 @@
-
 "use client";
 
 import { ScrollReveal } from "./ScrollReveal";
@@ -12,11 +11,11 @@ export function Experience() {
       period: "2024 — Present",
       description: "Building production-ready applications with Next.js and MERN stack, focusing on scalable architecture and real-world problem solving.",
       contributions: [
-        "Built AplyO: Full-stack MERN job tracking platform with JWT authentication and RESTful APIs",
-        "Created Gym Website: Performance-optimized fitness business site with mobile-first design",
-        "Developed FixMyArea: Bilingual community issue reporting system with real-time updates",
-        "Built AgroInsight: Data-driven dashboard for farmers with API integration and caching",
-        "Created OpenDesk: GitHub-integrated collaboration platform with Clerk authentication"
+        "Built AplyO: Full-stack MERN job application tracking platform with JWT authentication, RESTful APIs, and dashboard UI",
+        "Created Gym Website: Performance-optimized fitness business website with mobile-first design and modern UI",
+        "Developed FixMyArea: Bilingual community issue reporting system with real-time updates using Next.js and MongoDB",
+        "Built AgroInsight: Data-driven dashboard for farmers with API integration, caching, and Chart.js visualizations",
+        "Created OpenDesk: GitHub-integrated collaboration platform with Clerk authentication and task management"
       ],
       stack: ["Next.js", "React", "Node.js", "Express", "MongoDB", "TypeScript", "JWT", "REST APIs", "Tailwind CSS"]
     },
@@ -26,9 +25,9 @@ export function Experience() {
       period: "2023 — 2024",
       description: "Started web development journey during BSc IT, mastering React, Next.js, and modern frontend practices.",
       contributions: [
-        "Learned React fundamentals, component architecture, and state management",
-        "Mastered Next.js App Router, server components, and optimization techniques",
-        "Built responsive interfaces using Tailwind CSS and UI/UX principles",
+        "Learned React fundamentals, component architecture, and state management patterns",
+        "Mastered Next.js App Router, server components, and performance optimization techniques",
+        "Built responsive interfaces using Tailwind CSS and modern UI/UX principles",
         "Practiced API integration, data fetching, and client-server communication"
       ],
       stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Responsive Design", "UI/UX"]
@@ -42,9 +41,9 @@ export function Experience() {
         "Maintained projects on GitHub with proper version control and documentation",
         "Practiced Git workflows: branching, merging, pull requests, and conflict resolution",
         "Studied open-source codebases to understand industry-standard project structure",
-        "Deployed applications to Vercel with CI/CD pipelines"
+        "Deployed applications to Vercel with CI/CD pipelines and environment management"
       ],
-      stack: ["Git", "GitHub", "Vercel", "CI/CD", "Documentation"]
+      stack: ["Git", "GitHub", "Vercel", "CI/CD", "Documentation", "Code Review"]
     }
   ];
 
@@ -72,7 +71,7 @@ export function Experience() {
               </div>
               
               <div className="space-y-6">
-                <p className="text-zinc-400 italic leading-relaxed text-lg">
+                <p className="text-zinc-400 leading-relaxed text-lg">
                   {exp.description}
                 </p>
                 

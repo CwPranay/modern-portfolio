@@ -1,11 +1,9 @@
-
 "use client";
 
 import Image from "next/image";
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import { ScrollReveal } from "./ScrollReveal";
 import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
@@ -57,7 +55,7 @@ export function Projects() {
         <div className="space-y-4">
           <h2 className="text-5xl md:text-6xl font-bold text-white font-headline leading-tight tracking-tight">
             Recent Projects <br />
-            and <span className="text-primary italic">Achievements</span>
+            and <span className="text-primary">Achievements</span>
           </h2>
         </div>
       </ScrollReveal>
@@ -70,7 +68,6 @@ export function Projects() {
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="group flex flex-col bg-[#161618] border border-white/5 rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-500 hover:border-primary/20"
             >
-              {/* Image Container */}
               <div className="aspect-[4/3] relative overflow-hidden bg-zinc-900">
                 <Image
                   src={project.image}
@@ -79,12 +76,11 @@ export function Projects() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   data-ai-hint="project screenshot"
                 />
-                {/* Overlay Links */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                   <a 
                     href={project.live} 
                     className="p-3 bg-primary text-white rounded-full hover:scale-110 transition-transform"
-                    title="View Demo"
+                    title="Live Demo"
                   >
                     <ExternalLink size={20} />
                   </a>
@@ -98,7 +94,6 @@ export function Projects() {
                 </div>
               </div>
 
-              {/* Info Container */}
               <div className="p-8 md:p-10 space-y-2">
                 <h4 className="text-3xl font-bold text-white font-headline tracking-tight">{project.title}</h4>
                 <p className="text-zinc-500 font-medium text-lg leading-snug">{project.subtitle}</p>
@@ -113,6 +108,7 @@ export function Projects() {
           <a 
             href="https://github.com/Cwpranay" 
             target="_blank" 
+            rel="noopener noreferrer"
             className="group flex items-center gap-3 text-white font-bold bg-white/5 border border-white/5 px-8 py-4 rounded-2xl hover:bg-white/10 transition-all duration-300 hover-scale"
           >
             Visit My GitHub

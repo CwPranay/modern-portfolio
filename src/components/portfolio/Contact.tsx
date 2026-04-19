@@ -1,4 +1,3 @@
-
 "use client";
 
 import { ScrollReveal } from "./ScrollReveal";
@@ -18,7 +17,7 @@ export function Contact() {
               <Mail size={32} />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white font-headline leading-tight">
-              Let's build something <span className="text-primary italic">extraordinary</span> together.
+              Let's build something <span className="text-primary">extraordinary</span> together.
             </h2>
             <p className="text-zinc-400 text-lg leading-relaxed">
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Whether you have a specific proposal or just want to say hi, feel free to reach out.
