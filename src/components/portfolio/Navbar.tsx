@@ -8,9 +8,9 @@ import { useState, useEffect } from "react";
 const navItems = [
   { icon: Home, label: "Home", href: "#" },
   { icon: User, label: "About", href: "#about" },
-  { icon: Briefcase, label: "Experience", href: "#experience" },
   { icon: Folder, label: "Projects", href: "#projects" },
   { icon: Wrench, label: "Tools", href: "#tools" },
+  { icon: Briefcase, label: "Experience", href: "#experience" },
   { icon: Mail, label: "Contact", href: "#contact" },
 ];
 
@@ -19,12 +19,14 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Find current section
       const sections = navItems.map(item => ({
         id: item.href.replace("#", ""),
         label: item.label
       }));
 
-      for (const section of sections.reverse()) {
+      // Check from bottom to top to find the current active section
+      for (const section of [...sections].reverse()) {
         if (!section.id) {
             if (window.scrollY < 300) {
                 setActive("Home");
@@ -33,9 +35,13 @@ export function Navbar() {
             continue;
         }
         const el = document.getElementById(section.id);
-        if (el && el.getBoundingClientRect().top <= 120) {
-          setActive(section.label);
-          break;
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          // If the top of the section is within 150px of the top of the viewport
+          if (rect.top <= 150) {
+            setActive(section.label);
+            break;
+          }
         }
       }
     };
