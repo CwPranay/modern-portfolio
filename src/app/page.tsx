@@ -17,32 +17,42 @@ export default function Home() {
       {/* Floating Navigation Bar */}
       <Navbar />
 
-      {/* Root Container */}
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-[35%_65%] gap-8 md:gap-12 items-start">
-          
-          {/* Left Side: Profile Card - Perfectly Aligned Top */}
-          <aside className="pt-10 md:pt-16 md:sticky md:top-24 self-start w-full">
+      {/* 1. Hero Section: Left card scrolls normally with content */}
+      <section className="max-w-6xl mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-[35%_65%] gap-8 md:gap-12 items-start pt-10 md:pt-16">
+          <aside className="w-full">
             <div className="max-w-sm w-full mx-auto md:mx-0">
               <ProfileCard />
             </div>
           </aside>
-
-          {/* Right Side: Main Content Stream */}
-          <main className="flex flex-col space-y-32 pb-32 w-full overflow-hidden">
+          <main>
             <Hero />
-            
-            <div className="space-y-32">
-              <About />
-              <Experience />
-              <Projects />
-              <Tools />
-            </div>
-
-            <Contact />
           </main>
         </div>
-      </div>
+      </section>
+
+      {/* 2. Main Content Section: Left card becomes sticky after hero ends */}
+      <section className="max-w-6xl mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-[35%_65%] gap-8 md:gap-12 items-start">
+          
+          {/* Sticky wrapper for desktop - only appears after hero section is scrolled past */}
+          <aside className="hidden md:block sticky top-24 self-start w-full">
+            <div className="max-w-sm w-full">
+              <ProfileCard />
+            </div>
+          </aside>
+
+          {/* Scrolling content stream */}
+          <div className="flex flex-col space-y-32 pb-32 w-full overflow-hidden">
+            <About />
+            <Experience />
+            <Projects />
+            <Tools />
+            <Contact />
+          </div>
+        </div>
+      </section>
+
       <Toaster />
     </div>
   );

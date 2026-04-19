@@ -13,7 +13,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="min-h-screen pt-10 md:pt-16 flex flex-col justify-start space-y-16">
+    <div className="flex flex-col justify-start space-y-16 pb-20">
       <div className="space-y-12">
         <ScrollReveal>
           <div className="space-y-6">
@@ -71,7 +71,7 @@ export function Hero() {
           </div>
           
           <div className="flex items-center gap-3">
-             <Button size="sm" className="bg-[#7C3AED] hover:bg-[#7C3AED]/90 rounded-md text-xs px-4 h-9 font-bold">
+             <Button size="sm" className="bg-[#7C3AED] hover:bg-[#7C3AED]/90 rounded-md text-xs px-4 h-9 font-bold shadow-lg shadow-primary/20">
                Use Template for Free
              </Button>
              <Button size="sm" variant="secondary" className="bg-white text-black hover:bg-white/90 rounded-md text-xs px-4 h-9 font-bold">
@@ -80,6 +80,6 @@ export function Hero() {
           </div>
         </div>
       </ScrollReveal>
-    </section>
+    </div>
   );
 }
