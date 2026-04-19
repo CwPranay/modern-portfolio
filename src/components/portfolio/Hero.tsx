@@ -13,10 +13,10 @@ export function Hero() {
   ];
 
   return (
-    <div className="flex flex-col justify-start space-y-16 pb-20">
-      <div className="space-y-12">
+    <section id="hero" className="min-h-[120vh] flex flex-col justify-start items-start space-y-16">
+      <div className="space-y-12 w-full">
         <ScrollReveal>
-          <div className="space-y-6">
+          <div className="space-y-6 pt-2 md:pt-4">
             <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold font-headline leading-[1.1] tracking-tight text-white text-left">
               Transforming Your Ideas into <span className="text-primary italic">Reality</span>
             </h2>
@@ -29,7 +29,7 @@ export function Hero() {
         <ScrollReveal delay={0.1}>
           <div className="flex flex-wrap gap-8 md:gap-16">
             {stats.map((stat, i) => (
-              <div key={i} className="space-y-1">
+              <div key={i} className="space-y-1 text-left">
                 <div className="text-4xl md:text-6xl font-bold text-white font-headline">{stat.value}</div>
                 <div className="text-[10px] md:text-xs text-zinc-500 font-bold uppercase tracking-[0.2em]">{stat.label}</div>
               </div>
@@ -54,7 +54,7 @@ export function Hero() {
         </ScrollReveal>
       </div>
 
-      <ScrollReveal delay={0.3}>
+      <ScrollReveal delay={0.3} className="w-full">
         <div className="pt-16 border-t border-white/5 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="space-y-6">
             <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Relied on by companies near, far, and worldwide</p>
@@ -80,6 +80,6 @@ export function Hero() {
           </div>
         </div>
       </ScrollReveal>
-    </div>
+    </section>
   );
 }
