@@ -3,8 +3,8 @@
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail } from "lucide-react";
-import { FaXTwitter } from "react-icons/fa6";
+import { Mail } from "lucide-react";
+import { FaXTwitter ,FaGithub,FaLinkedin ,FaMailchimp} from "react-icons/fa6";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import {
   motion,
@@ -124,11 +124,11 @@ export function ProfileCard() {
         >
           {[
             {
-              icon: Github,
+              icon: FaGithub,
               href: "https://github.com/CwPranay",
             },
             {
-              icon: Linkedin,
+              icon: FaLinkedin,
               href: "https://linkedin.com/in/pranay-gurav",
             },
             {
@@ -136,7 +136,7 @@ export function ProfileCard() {
               href: "https://x.com/PranayyGurav",
             },
             {
-              icon: Mail,
+              icon: FaMailchimp,
               href: "mailto:prngurav@gmail.com",
             },
           ].map((social, i) => (
