@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
-import { FaXTwitter ,FaGithub,FaLinkedin ,FaMailchimp} from "react-icons/fa6";
+import { FaXTwitter ,FaGithub,FaLinkedin } from "react-icons/fa6";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import {
   motion,
@@ -136,7 +136,7 @@ export function ProfileCard() {
               href: "https://x.com/PranayyGurav",
             },
             {
-              icon: FaMailchimp,
+              icon: Mail,
               href: "mailto:prngurav@gmail.com",
             },
           ].map((social, i) => (
