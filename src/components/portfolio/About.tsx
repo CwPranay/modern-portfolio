@@ -31,7 +31,7 @@ export function About() {
                 <h4 className="text-white font-bold text-xl">Education</h4>
                 <div className="space-y-1">
                   <p className="text-white font-bold">BSc IT</p>
-                  <p className="text-zinc-500 text-sm">Final Year • 2023 - 2026</p>
+                  <p className="text-zinc-500 text-sm"> 2023 - 2026</p>
                 </div>
                 <div className="pt-4 border-t border-white/5">
                   <h4 className="text-white font-bold mb-4">Core Focus</h4>
