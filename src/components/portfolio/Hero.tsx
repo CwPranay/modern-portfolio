@@ -58,14 +58,14 @@ export function Hero() {
         <ScrollReveal delay={0.7}>
           <div className="flex flex-col md:flex-row items-center justify-center md:justify-start gap-4 md:gap-6 mt-6">
             <a href="#projects" className="w-full md:w-auto">
-              <Button 
+              <Button
                 className="w-full md:w-auto bg-primary hover:bg-primary/90 hover:brightness-110 text-white font-bold px-6 py-3 rounded-lg shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-all duration-300 hover:scale-[1.03] active:scale-95 text-base h-auto"
               >
                 View Projects
               </Button>
             </a>
             <a href="#contact" className="group flex items-center gap-2 text-white font-bold transition-all duration-300 hover:text-primary text-base">
-              Get In Touch 
+              Get In Touch
               <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </div>
@@ -86,18 +86,16 @@ export function Hero() {
           <div className="space-y-6">
             <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">Currently Working On</p>
             <div className="flex flex-wrap items-center gap-10 opacity-60">
-               <div className="flex items-center gap-3 text-white font-bold text-xl">
-                 <span>Full-Stack Projects</span>
-               </div>
-               <div className="flex items-center gap-3 text-white font-bold text-xl">
-                 <span>Building Production Apps</span>
-               </div>
-               <div className="flex items-center gap-3 text-white font-bold text-xl">
-                 <span>Learning AI/ML</span>
-               </div>
-               <div className="flex items-center gap-3 text-white font-bold text-xl">
-                 <span>Exploring Tech</span>
-               </div>
+              <div className="flex items-center gap-3 text-white font-bold text-xl">
+                <span>Full-Stack Projects</span>
+              </div>
+              <div className="flex items-center gap-3 text-white font-bold text-xl">
+                <span>Building Production Apps</span>
+              </div>
+
+              <div className="flex items-center gap-3 text-white font-bold text-xl">
+                <span>Exploring Tech</span>
+              </div>
             </div>
           </div>
         </div>
