@@ -40,13 +40,14 @@ const projects = [
     github: "https://github.com/CwPranay/aplyo",
   },
   {
-    title: "Gym Website",
-    subtitle: "Modern Fitness UI",
-    description: "A responsive, modern gym and fitness website with clean UI and mobile-first design.",
-    imageId: "gym",
-    live: "https://gymwebsite-demo.vercel.app/",
-    github: "https://github.com/CwPranay/GymWebsite",
-  },
+  title: "Summit Shelter",
+  subtitle: "Premium Outdoor E-commerce Experience",
+  description:
+    "A cinematic e-commerce experience for premium outdoor gear focused on visual storytelling, immersive branding, and high-end product presentation. Designed to transform a basic product catalog into a premium lifestyle brand experience.",
+  imageId: "summit-shelter",
+  live: "https://summit-shelter.vercel.app/",
+  github: "https://github.com/CwPranay/SummitShelter",
+},
 ];
 
 export function Projects() {

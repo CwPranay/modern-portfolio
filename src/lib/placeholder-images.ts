@@ -37,9 +37,9 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     imageHint: "job application tracker interface"
   },
   {
-    id: "gym",
-    description: "Gym Website project screenshot",
-    imageUrl: "/projects/gym.png",
-    imageHint: "modern fitness website design"
+    id: "summit-shelter",
+    description: "summmmit shelter hero section screenshot",
+    imageUrl: "/projects/summit.png",
+    imageHint: "cinematic hero section"
   }
 ];
