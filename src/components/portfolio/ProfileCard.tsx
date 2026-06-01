@@ -113,7 +113,7 @@ export function ProfileCard() {
           <h1 className="text-3xl font-bold text-white">
             Pranay Gurav
           </h1>
-          <p className="text-zinc-400">MERN Stack Developer</p>
+          <p className="text-zinc-400">Software Engineer | Full-Stack Developer</p>
           <p className="text-zinc-500 text-sm">Mumbai, India</p>
         </div>
 

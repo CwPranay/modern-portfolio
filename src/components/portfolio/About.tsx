@@ -19,11 +19,11 @@ export function About() {
             <div className="space-y-6 text-zinc-400 text-lg leading-relaxed">
               <h4 className="text-white font-bold text-xl">Who I Am</h4>
               <p>
-                I'm a BSc IT Graduate and Full-Stack Developer specializing in Next.js and the MERN stack. I focus on building real-world, production-ready applications that solve practical problems and deliver strong user experiences.
+                I am a Software Engineer and Full-Stack Developer with experience building production-ready web applications from concept to deployment. My work focuses on designing scalable backend systems, developing responsive user interfaces, integrating APIs, and creating efficient data-driven solutions.
               </p>
               <h4 className="text-white font-bold text-xl">What I Do</h4>
               <p>
-                I design and develop modern web applications using Next.js, React, Node.js, Express, and MongoDB. My work includes building scalable APIs, authentication systems, dashboards, and cloud-deployed platforms.
+                I have built projects including FixMyArea, AgroInsight, and AplyO, each designed to solve real-world challenges through modern web technologies. I enjoy transforming ideas into complete software products and continuously improving my skills in software engineering, application architecture, and full-stack development.
               </p>
             </div>
             <div className="space-y-6">

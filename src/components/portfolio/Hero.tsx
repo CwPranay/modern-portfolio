@@ -39,7 +39,7 @@ export function Hero() {
           </h2>
           <ScrollReveal delay={0.3}>
             <p className="text-sm md:text-xl text-zinc-400 max-w-sm md:max-w-xl mx-auto md:mx-0 leading-relaxed font-body">
-              Specializing in Next.js and the MERN stack. I build scalable, production-ready applications focusing on clean architecture and modern best practices.
+              Building production-ready web applications using React.js, Next.js, Node.js, Express.js, and MongoDB. Passionate about solving real-world problems through scalable architectures, API development, and user-centric experiences.
             </p>
           </ScrollReveal>
         </div>

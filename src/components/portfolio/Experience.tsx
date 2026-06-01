@@ -7,17 +7,17 @@ export function Experience() {
   const experiences = [
     {
       company: "Personal Projects & Portfolio",
-      role: "Full-Stack Developer",
+      role: "Software Engineer | Full-Stack Developer",
       period: "2024 — Present",
-      description: "Building production-ready applications with Next.js and MERN stack, focusing on scalable architecture and real-world problem solving.",
+      description: "Building production-ready web applications using React.js, Next.js, Node.js, Express.js, and MongoDB. Focused on scalable architectures, API development, and user-centric solutions.",
       contributions: [
-        "Built AplyO: Full-stack MERN job application tracking platform with JWT authentication, RESTful APIs, and dashboard UI",
-        "Created Gym Website: Performance-optimized fitness business website with mobile-first design and modern UI",
-        "Developed FixMyArea: Bilingual community issue reporting system with real-time updates using Next.js and MongoDB",
-        "Built AgroInsight: Data-driven dashboard for farmers with API integration, caching, and Chart.js visualizations",
-        "Created OpenDesk: GitHub-integrated collaboration platform with Clerk authentication and task management"
+        "Built AplyO: Job application tracking platform using HTML5, CSS3, JavaScript, and localStorage for offline-first data persistence without backend APIs.",
+        "Created Gym Website: Performance-optimized fitness business website with mobile-first design and modern UI.",
+        "Developed FixMyArea: Bilingual community issue reporting system with real-time updates using Next.js and MongoDB.",
+        "Built AgroInsight: Data-driven dashboard for farmers with API integration, caching, and Chart.js visualizations.",
+        "Created OpenDesk: GitHub-integrated collaboration platform with Clerk authentication and task management."
       ],
-      stack: ["Next.js", "React", "Node.js", "Express", "MongoDB", "TypeScript", "JWT", "REST APIs", "Tailwind CSS"]
+      stack: ["React.js", "Next.js", "Node.js", "Express.js", "MongoDB", "TypeScript", "JWT", "REST APIs", "Tailwind CSS"]
     },
     {
       company: "Learning & Skill Development",
